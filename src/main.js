@@ -1,8 +1,23 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
+import router from './router/router'
+import store from './store/store'
 import './registerServiceWorker'
+import VueMasonry from 'vue-masonry-css'
+import VueCurrencyFilter from 'vue-currency-filter'
+
+const _ = require('lodash');
+
+Vue.use(VueMasonry);
+Vue.use(VueCurrencyFilter,
+  {
+    symbol : '$',
+    thousandsSeparator: ',',
+    fractionCount:0,
+    fractionSeparator: ',',
+    symbolPosition: 'front',
+    symbolSpacing: false
+  })
 
 Vue.config.productionTip = false
 
