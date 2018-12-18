@@ -1,5 +1,5 @@
 <template>
-    <figure class="art">
+    <figure class="art" @click="previewProduct">
         <img class="bg" :src="item.art.photoUrl" alt="">
         <div class="detail">
             <header>
@@ -33,6 +33,12 @@ export default {
     name: 'gallery-art-item',
     props: {
         item: Object
+    },
+    methods: {
+        previewProduct() {
+            const product = this.item;
+            return this.$store.dispatch('viewProductPreview', product);
+        }
     }
 }
 </script>

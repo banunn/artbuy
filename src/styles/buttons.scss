@@ -1,3 +1,16 @@
 button {
     cursor: pointer;
+    transition: transform .12s ease;
+    &:active {
+        transform: translateY(1px);
+    }
+    &.icon-btn{
+        -webkit-appearance: none;
+        background: none;
+        border: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding:0;
+    }
 }
