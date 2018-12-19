@@ -1,22 +1,38 @@
 <template>
-    <main class="content">
+    <main v-if="product" class="content" :class="{'page-content': isProductPage}">
         <header class="ctrl">
-            <div class="btn-group">
+            <!-- <div class="btn-group">
                 <button class="icon-btn"><i class="material-icons">arrow_back</i></button>
                 <button class="icon-btn"><i class="material-icons">arrow_forward</i></button>
-            </div>
+            </div> -->
         </header>
         <figure class="image">
             <img :src="product.art.photoUrl" alt="">
         </figure>
+        <div v-if="isProductPage" class="product-page-content">
+            <product-meta></product-meta>
+            <product-comments></product-comments>
+        </div>
     </main>
 </template>
 
 <script>
+import productComments from './comment/product-comments'
+import productMeta from './product-meta'
 export default {
     name: 'modal-product-viewer',
+    components: {
+        productComments,
+        productMeta
+    },
     props: {
         product: Object
+    },
+    computed: {
+        isProductPage() {
+         var route = this.$store.state.route.name;
+            return route === 'product' ? true : false;
+        }
     }
 }
 </script>
@@ -27,6 +43,9 @@ export default {
         max-height: 100vh;
         overflow-y: auto;
         flex:1;
+        &.page-content {
+            max-height: calc(100vh - 64px);
+        }
     }
 
     .ctrl {

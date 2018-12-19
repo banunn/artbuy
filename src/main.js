@@ -5,7 +5,9 @@ import store from './store/store'
 import './registerServiceWorker'
 import VueMasonry from 'vue-masonry-css'
 import VueCurrencyFilter from 'vue-currency-filter'
+import { sync } from 'vuex-router-sync'
 
+const unsync = sync(store, router) // done. Returns an unsync callback fn
 const _ = require('lodash');
 
 Vue.use(VueMasonry);

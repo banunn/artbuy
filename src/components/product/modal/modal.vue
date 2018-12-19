@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import modalProductViewer from './modal-product-viewer';
-import modalProductSidebar from './modal-product-sidebar';
+import modalProductViewer from '../product-viewer';
+import modalProductSidebar from '../product-sidebar';
 export default {
     name: 'product-modal',
     components: {
@@ -37,7 +37,6 @@ export default {
         },
         toggleBodyClass(addRemoveClass, className) {
             const el = document.body;
-            console.log('firing');
             if (addRemoveClass === 'addClass') {
                 el.classList.add(className);
                 } else {

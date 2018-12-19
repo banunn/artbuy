@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import router from '@/router/router'
-
+import products from '@/assets/data/products'
 
 export default {
     state: { 
         selectedProduct: null,
+        productList: products,
+        pageProduct: null,
         productModal: {
             open: false,
         }
@@ -18,6 +20,12 @@ export default {
        },
        modalState(state, bool) {
            bool == true ? state.productModal.open = true : state.productModal.open = false;
+       },
+       setPageProduct(state, product) {
+            state.pageProduct = product;
+       },
+       clearPageProduct(state, product) {
+            state.pageProduct = null;
        }
     },
     actions: {
@@ -38,6 +46,18 @@ export default {
                     commit('clearSelectedProduct');
                 }, 650);
             });
+        },
+        getPageProduct({getters, state, commit}, id) {
+            commit('clearPageProduct');
+            let product = _.find(state.productList, function(i) {
+                return i.id == id;
+            });
+            if(product) {
+                console.log(product);
+                return new Promise(function(resolve) {
+                    resolve(commit('setPageProduct', product));
+                });
+            }
         }
     },
     getters: {
@@ -46,6 +66,9 @@ export default {
         },
         productModalState(state) {
             return state.productModal.open;
+        },
+        productPageProduct(state, rootstate) {
+            return state.pageProduct ? state.pageProduct : null;
         }
     }
 }

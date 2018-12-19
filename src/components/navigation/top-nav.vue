@@ -1,6 +1,8 @@
 <template>
     <div class="top-nav">
-        <img class="logo" src="../../assets/logo.png" alt="">
+        <router-link to="/">
+            <img class="logo" src="../../assets/logo.png" alt="">
+        </router-link>
         <nav-tools></nav-tools>
     </div>
 </template>

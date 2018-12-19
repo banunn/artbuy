@@ -1,5 +1,5 @@
 <template>
-    <aside class="sidebar">
+    <aside v-if="product" class="sidebar">
         <header class="head">
             <div class="meta">
                 <aside class="user-icon"><img :src="product.author.photoUrl" alt=""></aside>
@@ -22,6 +22,7 @@
         <footer class="action-foot">
             <button class="purchase btn-primary">Purchase</button>
             <button class="btn-secondary">Add To Collection</button>
+            <button @click="viewProduct" class="btn-secondary">View More</button>
         </footer>
     </aside>  
 </template>
@@ -31,7 +32,22 @@ export default {
   name: "modal-product-sidebar",
   props: {
     product: Object
-  }
+  },
+  methods: {
+      viewProduct() {
+          const vm = this;
+          const p = vm.product;
+          return vm.$store.dispatch('closeProductPreview').then(function() {
+             vm.$router.push({name: 'product', params: {id: p.id}});
+          })
+      }
+    },
+    computed: {
+        isProductPage() {
+            var route = this.$store.state.route.name;
+            return route === 'product' ? true : false;
+        }
+    }
 };
 </script>
 
