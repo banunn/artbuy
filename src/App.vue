@@ -3,17 +3,20 @@
     <top-nav></top-nav>
     <router-view/>
     <product-modal />
+    <auth-modal />
   </div>
 </template>
 
 <script>
 import topNav from "@/components/navigation/top-nav";
 import productModal from "@/components/product/modal/modal";
+import authModal from '@/components/auth/auth-modal'
 export default {
   name: "main-app",
   components: {
     topNav,
-    productModal
+    productModal,
+    authModal
   },
   computed: {
     flyoutOpen() {

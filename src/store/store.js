@@ -3,12 +3,14 @@ import Vuex from 'vuex'
 
 // Modules
 import product from './modules/product'
+import user from './modules/user'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-    product
+    product,
+    user
   },
   state: {
     

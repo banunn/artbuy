@@ -19,7 +19,8 @@ Vue.use(VueCurrencyFilter,
     fractionSeparator: ',',
     symbolPosition: 'front',
     symbolSpacing: false
-  })
+  });
+  Vue.use(require('vue-moment'));
 
 Vue.config.productionTip = false
 

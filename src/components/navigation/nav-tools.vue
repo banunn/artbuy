@@ -6,15 +6,23 @@
             <a href="" class="link">Sell</a>
         </nav>
         <div class="action">
-            <button class="btn-outline">Login</button>
-            <button class="sign-up">Sign Up</button>
+            <button @click="login" class="btn-outline">Login</button>
+            <button @click="signUp" class="sign-up">Sign Up</button>
         </div>
     </aside>
 </template>
 
 <script>
 export default {
-    name: 'nav-tools'
+    name: 'nav-tools',
+    methods: {
+        login() {
+            this.$store.dispatch('authSignIn');
+        },
+        signUp() {
+            this.$store.dispatch('authSignUp');
+        }
+    }
 }
 </script>
 

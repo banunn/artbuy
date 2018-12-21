@@ -22,7 +22,7 @@
         <footer class="action-foot">
             <button class="purchase btn-primary">Purchase</button>
             <button class="btn-secondary">Add To Collection</button>
-            <button @click="viewProduct" class="btn-secondary">View More</button>
+            <button v-if="!isProductPage" @click="viewProduct" class="btn-secondary">View More</button>
         </footer>
     </aside>  
 </template>

@@ -15,3 +15,20 @@ body {
         padding-right: 16px;
     }
 }
+
+figure {
+    margin:0;
+    &.user-img {
+        background: #eaeaea;
+        height: 40px;
+        width: 40px;
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

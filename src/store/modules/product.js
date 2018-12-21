@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import router from '@/router/router'
 import products from '@/assets/data/products'
+import productComments from '@/assets/data/productComments'
 
 export default {
     state: { 
@@ -9,7 +10,9 @@ export default {
         pageProduct: null,
         productModal: {
             open: false,
-        }
+        },
+        // product comments consists of an array of comments related to the product being viewed ( in our case the pageProduct above) to keep things tidy, it would be best to make a new query for the comments outside of the core pageProduct data. 
+        productComments: productComments
     },
     mutations: {
        setSelectedProduct(state, payload) {
@@ -69,6 +72,9 @@ export default {
         },
         productPageProduct(state, rootstate) {
             return state.pageProduct ? state.pageProduct : null;
+        },
+        productComments(state) {
+            return state.productComments ? state.productComments : []
         }
     }
 }
