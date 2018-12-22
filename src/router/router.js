@@ -11,7 +11,6 @@ export default new Router({
       name: 'home',
       component: Home,
       meta: {
-        navType: 'store',
         hasNav: true
       },
     },
@@ -19,7 +18,6 @@ export default new Router({
       path: '/about',
       name: 'about',
       meta: {
-        navType: 'store',
         hasNav: true
       },
       // route level code-splitting
@@ -31,7 +29,6 @@ export default new Router({
       path: '/product/:id',
       name: 'product',
       meta: {
-        navType: 'store',
         hasNav: true
       },
       beforeEnter(to, from, next) {
@@ -45,6 +42,17 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Product.vue')
-    }
+    },
+    {
+      path: '/user/:id',
+      name: 'user',
+      meta: {
+        hasNav: true
+      },
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/user/user.vue')
+    },
   ]
 })

@@ -11,7 +11,7 @@
                 <section class="forgot">
                     <span>forgot password</span>
                 </section>
-                <button class="btn-block-primary">Log In</button>
+                <button @click="logIn" class="btn-block-primary">Log In</button>
                 <footer class="form-content-foot">
                     Already have an account? Sign up <a @click="goToSignUp">here</a>
                 </footer>
@@ -33,6 +33,9 @@ export default {
     methods: {
         goToSignUp() {
             this.$store.dispatch('authSignUp');
+        },
+        logIn() {
+            this.$store.dispatch('authUserSignIn');
         }
     }
 }

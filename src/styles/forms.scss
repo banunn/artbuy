@@ -115,4 +115,7 @@
             right:0;
         }
     }
+    &.modal-confirm {
+        flex-direction: column;
+    }
 }

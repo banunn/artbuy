@@ -9,7 +9,7 @@
                 <input type="email" placeholder="you@email.com">
                 <input type="password" placeholder="password">
                 <input type="password" placeholder="confirm password">
-                <button class="btn-block-primary">Sign Up</button>
+                <button class="btn-block-primary" @click="confirm">Sign Up</button>
                 <footer class="form-content-foot">
                     Already Have An Account? Log In <a @click="goToLogIn">here</a>
                 </footer>
@@ -31,6 +31,9 @@ export default {
     methods: {
         goToLogIn() {
             this.$store.dispatch('authSignIn');
+        },
+        confirm() {
+            this.$store.dispatch('authConfirm');
         }
     }
 }
