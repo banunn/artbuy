@@ -1,0 +1,39 @@
+// AXIOS ( http client ) docs available at https://www.npmjs.com/package/vue-axios
+  // AXIOS is a promise based http request tool ( like angular http or $ajax )
+
+  // EXAMPLE AXIOS CODE // 
+  /*
+  Vue.axios.get(api).then((response) => {
+    console.log(response.data)
+  })
+
+  // GET 
+
+   this.axios.get('/user?ID=12345')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+
+
+  // POST 
+
+   this.axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
+  */

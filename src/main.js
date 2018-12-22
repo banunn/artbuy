@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router/router'
 import store from './store/store'
 import './registerServiceWorker'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import VueMasonry from 'vue-masonry-css'
 import VueCurrencyFilter from 'vue-currency-filter'
 import { sync } from 'vuex-router-sync'
@@ -21,6 +23,10 @@ Vue.use(VueCurrencyFilter,
     symbolSpacing: false
   });
   Vue.use(require('vue-moment'));
+  Vue.use(VueAxios, axios)
+
+  // More info on Axios within the documentation assets/documentation/axios
+  
 
 Vue.config.productionTip = false
 

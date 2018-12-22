@@ -7,10 +7,12 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "moment": "^2.23.0",
     "register-service-worker": "^1.5.2",
     "vue": "^2.5.17",
+    "vue-axios": "^2.1.4",
     "vue-currency-filter": "^3.2.0",
     "vue-moment": "^4.0.0",
     "vue-router": "^3.0.1",
