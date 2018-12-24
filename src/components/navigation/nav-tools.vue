@@ -37,7 +37,7 @@ export default {
     },
     goToUserProfile() {
       var uid = this.user.uid;
-      this.$router.push({name: 'user', params: {id: uid}});
+      this.$router.push({name: 'user dashboard', params: {id: uid}});
     }
   },
   computed: {

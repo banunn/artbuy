@@ -1,0 +1,40 @@
+.widget {
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid rgba(17,18,21,0.1);
+    padding: 20px 16px;
+    margin-bottom: 16px;
+    .w-foot {
+        margin-top: 8px;
+    }
+}
+
+.widget-help {
+    border: 1px solid rgba(17,18,21,0.1);	
+    border-radius: 0 0 2px 2px;
+    background-color: #FAFAFA; 
+    margin-top: -17px;
+    position: relative;
+    z-index: 1;
+    border-top: none;
+    margin-bottom: 16px;
+    padding: 20px 16px;
+    display:flex;
+    font-size: 12px;
+    header {
+        font-weight: bold;
+    }
+    p {
+        opacity: 0.6;
+        font-size: 12px;	
+        font-weight: 500;	
+        line-height: 20px;
+        margin-bottom: 0;
+    }
+    .icon{
+        margin-right: 8px;
+        i {
+            font-size: 16px;
+        }
+    }
+}

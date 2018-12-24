@@ -9,6 +9,7 @@ export default {
             lastName: 'Decker',
             userType: 'Artist',
             photoUrl: 'https://images.unsplash.com/photo-1473700216830-7e08d47f858e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=800&q=1000',
+            subscription: 'individual',
             location: {
                 city: "Los Angeles",
                 state: "CA"

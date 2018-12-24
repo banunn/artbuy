@@ -119,3 +119,113 @@
         flex-direction: column;
     }
 }
+
+.input {
+        height: 48px;	
+        width: 100%;	
+        border: 1px solid rgba(17,18,21,0.2);
+        border-radius: 2px;	
+        background-color: #FFFFFF;
+        margin-bottom: 8px;
+        padding: 0 12px;
+        opacity: 0.8;	
+        color: #111215;
+        font-size: 14px;	
+        font-weight: 500;	
+        letter-spacing: 0.1px;	
+        line-height: 20px;
+        &.sm {
+            height: 40px;
+        }
+        &::placeholder {
+            color: rgba(#111215, .4);
+        }
+        &:focus {
+            outline: none;
+            border: 1px solid #111215;	
+        }
+}
+
+.label {
+    font-size: 12px;	
+    font-weight: bold;	
+    letter-spacing: 1px;	
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+.textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    opacity: .9;
+    border: 1px solid rgba(17,18,21,0.2);
+
+}
+
+.select {
+    display: block;
+    height: 48px;	
+    width: 100%;	
+    border: 1px solid rgba(17,18,21,0.2);
+    border-radius: 2px;	
+    background-color: #FFFFFF;
+    margin-bottom: 8px;
+    padding: 0 12px;
+    opacity: 0.8;	
+    color: #111215;
+    font-size: 14px;	
+    font-weight: 500;	
+    letter-spacing: 0.1px;	
+    line-height: 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    height: 40px;
+    margin-bottom: 8px;
+}
+.select::-ms-expand {
+    display: none;
+}
+.select:hover {
+    border-color: #888;
+}
+.select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+.select option {
+    font-weight:normal;
+}
+
+.form {
+    .label {
+        margin-bottom: 12px;
+    }
+}
+
+.form-row {
+    display: block;
+    margin-bottom: 24px;
+    &:last-child {
+        margin-bottom:0;
+    }
+    &.flex {
+        display: flex;
+        > div {
+            margin-right: 12px;
+            flex:1;
+            &:last-child {
+                margin-right:0;
+            }
+        }
+    }
+}

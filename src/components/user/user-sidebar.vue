@@ -66,7 +66,7 @@ export default {
     .user-sidebar {
         padding: 48px 24px;
         width: 332px;
-        flex: 332 0 0;
+        flex: 332px 0 0;
         box-shadow: inset -1px 0 0 0 #E8ECED;
         background: #fff;
         .profile-img {
