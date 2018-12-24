@@ -60,20 +60,58 @@ export default [
       {
         path: 'listings',
         name: 'user listings',
+        redirect: { name: 'view user listings' },
         meta: {
           hasNav: true,
           displayName: 'listings'
         },
-        component: () => import('../views/user/children/listings')
+        component: () => import('../views/user/children/listings'),
+        children: [
+          { 
+            path: '',
+            name: 'view user listings',
+            meta: {
+              hasNav: true,
+            },
+            component: () => import('../views/user/children/listings/view')
+          },
+          {
+            path: 'create',
+            name: 'create listing',
+            meta: {
+              hasNav: true,
+            },
+            component: () => import('../views/user/children/listings/create')
+          }
+        ]
       },
       {
         path: 'events',
         name: 'user events',
+        redirect: { name: 'view user events' },
         meta: {
           hasNav: true,
           displayName: 'events'
         },
-        component: () => import('../views/user/children/events')
+        component: () => import('../views/user/children/events'),
+        children: [
+          {
+            path: '',
+            name: 'view user events',
+            meta: {
+              hasNav: true,
+            },
+            component: () => import('../views/user/children/events/view')
+          },
+          {
+            path: 'create',
+            name: 'create event',
+            meta: {
+              hasNav: true,
+            },
+            component: () => import('../views/user/children/events/create')
+          }
+        ]
       },
       {
         path: 'virtual-collection',

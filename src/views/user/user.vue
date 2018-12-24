@@ -36,11 +36,4 @@ export default {
         overflow-y:auto;
     }
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s
-}
-
-.fade-enter, .fade-leave-active {
-  opacity: 0
-}
 </style>

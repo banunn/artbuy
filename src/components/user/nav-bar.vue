@@ -57,7 +57,7 @@ export default {
         &:last-child {
             margin-right: 0;
         }
-        &.router-link-exact-active {
+        &.router-link-active {
             color: rgba(#111215, 1);
             border-bottom: 2px solid #111215;
         }

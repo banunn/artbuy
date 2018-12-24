@@ -1,5 +1,5 @@
 <template>
-    <div class="event-grid">
+    <div class="listing-grid">
         <header class="super-head">
             <div class="nav">
                 <button :class="{'selected' : v.selected}" class="nav-item" v-for="(v, index) in views" :key="index">
@@ -7,26 +7,27 @@
                 </button>
             </div>
             <div class="ctrl">
-                <button @click="$router.push({name: 'create event'})" class="btn btn-dark">New Event</button>
+                <button @click="$router.push({name: 'create listing'})" class="btn btn-dark">New Listing</button>
             </div>
         </header>
         <div class="table-head">
+            <div class="heading"></div>
             <div v-for="(h, index) in headers" class="heading" :key="index">
                 <span>{{h}}</span>
-                <i v-if="h === 'event date'" class="material-icons">arrow_drop_down</i></div>
+                <i v-if="h === 'status'" class="material-icons">arrow_drop_down</i></div>
         </div>
         <div class="table-body">
-            <event v-for="(e, index) in events" :key="index" :event="e"></event>
+            <listing v-for="(l, index) in listings" :key="index" :listing="l"></listing>
         </div>
     </div>
 </template>
 
 <script>
-import event from './event-item'
+import listing from './listing-item'
 export default {
-    name: 'event-grid',
-    components: {
-        event
+    name: 'listing-grid',
+    components: { 
+        listing
     },
     data() {
         return {
@@ -36,72 +37,50 @@ export default {
                     selected: true
                 },
                 {
-                    name: 'upcoming',
+                    name: 'active',
                     selected: false
                 },
                 {
-                    name: 'past',
+                    name: 'sold',
                     selected: false
                 }
             ],
             sortBy: '',
             headers: [
                 'title',
-                'event date',
-                'start time',
-                'location',
-                'create date',
+                'date added',
+                'price',
                 'status'
             ],
-            events: [
+            listings: [
                 {
-                    name: 'Winter Wonderland Show',
+                    name: 'Pictures In The Sky',
+                    photoUrl: 'https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=180&w=180&q=80',
                     date: '01/28/2018',
-                    time: '7:00 PM – 10:00 PM',
-                    location: '0294 Witting Extensions Suite 967',
-                    createDate: '01/28/2018',
-                    status: 'Past'
+                    price: '$3,800',
+                    status: 'Sold'
                 },
-                                {
-                    name: 'Annual Artist Awards',
+                {
+                    name: 'Pictures In The Sky',
+                    photoUrl: 'https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=180&w=180&q=80',
                     date: '01/28/2018',
-                    time: '7:00 PM – 10:00 PM',
-                    location: '23 Kuphal Burg',
-                    createDate: '01/28/2018',
-                    status: 'present'
+                    price: '$3,800',
+                    status: 'Sold'
                 },
-                                {
-                    name: 'LOVE 4 ART Showcase',
+                {
+                    name: 'Pictures In The Sky',
+                    photoUrl: 'https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=180&w=180&q=80',
                     date: '01/28/2018',
-                    time: '7:00 PM – 10:00 PM',
-                    location: '26 Zieme Gateway Apt. 540',
-                    createDate: '01/28/2018',
-                    status: 'upcoming'
+                    price: '$3,800',
+                    status: 'Sold'
                 },
-                                {
-                    name: 'Winter Wonderland Show',
+                {
+                    name: 'Pictures In The Sky',
+                    photoUrl: 'https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=180&w=180&q=80',
                     date: '01/28/2018',
-                    time: '7:00 PM – 10:00 PM',
-                    location: '0294 Witting Extensions Suite 967',
-                    createDate: '01/28/2018',
-                    status: 'Past'
+                    price: '$3,800',
+                    status: 'Sold'
                 },
-                                {
-                    name: 'Annual Artist Awards',
-                    date: '01/28/2018',
-                    time: '7:00 PM – 10:00 PM',
-                    location: '23 Kuphal Burg',
-                    createDate: '01/28/2018',
-                    status: 'present'
-                },
-                                {
-                    name: 'LOVE 4 ART Showcase',
-                    date: '01/28/2018',
-                    time: '7:00 PM – 10:00 PM',
-                    location: '26 Zieme Gateway Apt. 540',
-                    createDate: '01/28/2018',
-                    status: 'upcoming'
-                }
             ]
         }
     }
@@ -109,7 +88,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.event-grid {
+.listing-grid {
     background-color: #FFFFFF;
     border-radius: 2px;
     border: 1px solid rgba(17,18,21,0.1);
@@ -177,7 +156,10 @@ export default {
             padding-right: 20px;
 
             &:first-child {
-                flex: 1.5;
+                flex: .5;
+            }
+            &:nth-child(2) {
+flex: 1.5;
             }
         }
     }

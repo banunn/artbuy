@@ -1,5 +1,7 @@
 <template>
-    <div>Listings</div>
+    <transition name="fade" mode="out-in" appear>
+        <router-view></router-view>
+    </transition>
 </template>
 
 <script>
