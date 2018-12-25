@@ -2,14 +2,7 @@
     <art-widget :title="'Sales Overview'">
         <template slot="body">
             <div class="sales-list">
-                <div class="sale" v-for="(s, index) in sales" :key="index">
-                    <div class="details">
-                        {{s.name}}
-                    </div>
-                    <div class="price">
-                        {{s.price}}
-                    </div>
-                </div>
+                <art-sale :sale="s" v-for="(s, index) in sales" :key="index"></art-sale>
             </div>
         </template>
         <template slot="footer">
@@ -27,14 +20,15 @@
 
 <script>
 import artWidget from '@/components/general/widget'
+import artSale from './sale'
 export default {
     name: 'sales_widget',
     components: {
-        artWidget
+        artWidget,
+        artSale
     },
     data() {
         return {
-            totalPrice: 7600,
             sales: [
                 {
                     photoUrl: 'https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=180&w=180&q=80',
@@ -55,6 +49,16 @@ export default {
                     price: 2600
                 }
             ]
+        }
+    },
+    computed: {
+        totalPrice() {
+            const vm = this;
+            var total = 0;
+            vm.sales.forEach(function(i) {
+                total += i.price;
+            });
+            return total;
         }
     }
 }

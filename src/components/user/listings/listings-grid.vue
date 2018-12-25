@@ -157,6 +157,7 @@ export default {
 
             &:first-child {
                 flex: .5;
+                min-width: 68px;
             }
             &:nth-child(2) {
 flex: 1.5;

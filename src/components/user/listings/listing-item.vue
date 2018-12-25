@@ -50,12 +50,14 @@ export default {
             &.photo {
                 height: 48px;	width: 48px;
                 flex:.5;
+                flex: 68px .5 68px;
+                min-width: 68px;
                 padding-right: 20px;
                 display: flex;
                 align-items: center;
                 margin-top: 4px;
                 border-radius: 4px;
-                img {
+                img { 
                     position: relative;
                     height: 100%;
                     width: 100%;
@@ -64,6 +66,7 @@ export default {
                     max-width: 48px;
                     background-color: rgba(0,0,0,0.4);
                     border-radius: 2px;
+                    min-width: 48px;
                 }
             }
         }

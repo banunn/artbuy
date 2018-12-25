@@ -7,6 +7,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueMasonry from 'vue-masonry-css'
 import VueCurrencyFilter from 'vue-currency-filter'
+import VueTransmit from "vue-transmit";
 import { sync } from 'vuex-router-sync'
 
 const unsync = sync(store, router) // done. Returns an unsync callback fn
@@ -23,7 +24,8 @@ Vue.use(VueCurrencyFilter,
     symbolSpacing: false
   });
   Vue.use(require('vue-moment'));
-  Vue.use(VueAxios, axios)
+  Vue.use(VueAxios, axios);
+  Vue.use(VueTransmit);
 
   // More info on Axios within the documentation assets/documentation/axios
   
