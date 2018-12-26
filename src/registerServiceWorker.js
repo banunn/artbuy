@@ -29,6 +29,7 @@ if (process.env.NODE_ENV === 'production') {
       } else {
         return;
       }
+      r();
     },
     offline () {
       console.log('No internet connection found. App is running in offline mode.')
