@@ -9,7 +9,7 @@
 
       <div class="wrap gallery-grid">
         <masonry :cols="{default: 3, 700: 2, 400: 1}" :gutter="{default: '30px'}">
-          <gallery-art :item="item"  v-for="(item, index) in items" :key="index"></gallery-art>
+          <gallery-art :item="item"  v-for="(item, index) in productsList" :key="index"></gallery-art>
         </masonry>
       </div>
 
@@ -30,8 +30,12 @@ export default {
   data() {
     return {
       heroBg: "https://images.unsplash.com/photo-1520652089412-37d308180157?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-      items: products
     };
+  },
+  computed: {
+    productsList() {
+      return this.$store.getters.productsList;
+    }
   }
 };
 </script>

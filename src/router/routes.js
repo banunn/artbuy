@@ -1,4 +1,5 @@
 import Home from '../views/Home.vue'
+import store from '../store/store'
 export default [
   {
     path: '/',
@@ -6,6 +7,11 @@ export default [
     component: Home,
     meta: {
       hasNav: true
+    },
+    beforeEnter(to, from, next) {
+      store.dispatch('getProducts').then(function() {
+        next();
+      });
     },
   },
   {

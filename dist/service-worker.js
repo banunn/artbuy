@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.47d181ba1c4027f889a1d4a419a08a16.js"
+  "/precache-manifest.e77889c6cbe399281ac6f18d93db2959.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "artbuy"});

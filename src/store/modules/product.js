@@ -2,6 +2,7 @@ import Vue from 'vue'
 import router from '@/router/router'
 import products from '@/assets/data/products'
 import productComments from '@/assets/data/productComments'
+import axios from 'axios';
 
 export default {
     state: { 
@@ -29,9 +30,19 @@ export default {
        },
        clearPageProduct(state, product) {
             state.pageProduct = null;
+       },
+       setProducts(state, array) {
+           state.productList = array;
        }
     },
     actions: {
+        getProducts({getters, state, commit}) {
+            axios.post('https://my.api.mockaroo.com/artbuy_products.json?key=5f0f46b0')
+                .then(function(response) {
+                    var data = response.data;
+                    commit('setProducts', data);
+                })
+        },
         viewProductPreview({getters, state, commit}, product) {
             return new Promise(function(resolve, reject) {
                 resolve(
@@ -75,6 +86,9 @@ export default {
         },
         productComments(state) {
             return state.productComments ? state.productComments : []
+        },
+        productsList(state) {
+            return state.productList ? state.productList : [];
         }
     }
 }
