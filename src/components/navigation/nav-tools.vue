@@ -15,7 +15,7 @@
       <button class="icon-btn">
         <i class="material-icons">shopping_cart</i>
       </button>
-      <button class="icon-btn">
+      <button @click="logout" class="icon-btn">
         <i class="material-icons">notifications</i>
       </button>
       <figure @click="goToUserProfile" class="user-img">
@@ -38,6 +38,9 @@ export default {
     goToUserProfile() {
       var uid = this.user.uid;
       this.$router.push({name: 'user dashboard', params: {id: uid}});
+    },
+    logout() {
+      return this.$store.dispatch('authUserLogOut');
     }
   },
   computed: {

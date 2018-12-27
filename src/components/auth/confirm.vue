@@ -1,5 +1,6 @@
 <template>
     <div class="auth-modal modal-confirm">
+        <button @click="close" class="icon-btn close"><i class="material-icons">clear</i></button>
         <header class="brand">
             <header>
                 <img src="@/assets/artbuy-white.png" alt="">
@@ -28,11 +29,15 @@ export default {
         goToLogIn() {
             this.$store.dispatch('authSignIn');
         },
+        close() {
+            this.$store.dispatch('authModalClose');
+        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+
     .modal-confirm {
         padding: 48px 48px 24px 48px;
         .brand {

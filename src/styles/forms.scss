@@ -9,6 +9,14 @@
     width: 864px;
     z-index: 800;
     box-shadow: 0 12px 24px 0 rgba(0,0,0,0.5);
+    .close {
+        position: absolute;
+        top: -24px;
+        left: -24px;
+        i {
+            color: #fff;
+        }
+    }
     .form {
         flex:1;
         padding: 48px 48px 24px 48px;

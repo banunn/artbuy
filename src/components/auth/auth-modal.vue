@@ -36,6 +36,7 @@ export default {
     created() {
         const vm = this;
         document.onkeydown = function(evt) {
+            console.log(evt);
             evt = evt || window.event;
             if (evt.keyCode == 27 && vm.open) {
                 vm.close();

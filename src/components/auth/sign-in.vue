@@ -1,5 +1,6 @@
 <template>
     <div class="auth-modal auth-sign-in-modal">
+        <button @click="close" class="icon-btn close"><i class="material-icons">clear</i></button>
         <div class="form">
             <header>
                 <img src="@/assets/artbuy-white.png" alt="">
@@ -36,6 +37,9 @@ export default {
         },
         logIn() {
             this.$store.dispatch('authUserSignIn');
+        },
+        close() {
+            this.$store.dispatch('authModalClose');
         }
     }
 }

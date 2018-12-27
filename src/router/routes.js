@@ -139,4 +139,38 @@ export default [
       }
     ]
   },
+  {
+    path: '/onboarding',
+    name: 'onboarding',
+    meta: {
+      hasNav: true
+    },
+    component: () => import('../views/onboarding/onboarding'),
+    children: [
+      {
+        path: 'welcome',
+        name: 'onboarding welcome',
+        meta: {
+          hasNav: true,
+        },
+        component: () => import('../views/onboarding/children/welcome')
+      },
+      {
+        path: 'plan',
+        name: 'onboarding plan',
+        meta: {
+          hasNav: true,
+        },
+        component: () => import('../views/onboarding/children/plan')
+      },
+      {
+        path: 'payment',
+        name: 'onboarding payment',
+        meta: {
+          hasNav: true,
+        },
+        component: () => import('../views/onboarding/children/welcome')
+      },
+    ]
+  },
 ]

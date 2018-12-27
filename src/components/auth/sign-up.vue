@@ -1,5 +1,6 @@
 <template>
     <div class="auth-modal auth-sign-up-modal">
+        <button @click="close" class="icon-btn close"><i class="material-icons">clear</i></button>
         <div class="form">
             <header>
                 <img src="@/assets/artbuy-white.png" alt="">
@@ -33,7 +34,16 @@ export default {
             this.$store.dispatch('authSignIn');
         },
         confirm() {
-            this.$store.dispatch('authConfirm');
+            const vm = this;
+            this.$store.dispatch('authConfirm').then(function() {
+                setTimeout(function() {
+                    vm.$store.dispatch('authModalClose');
+                    vm.$router.push({name: 'onboarding welcome'});
+                }, 1500);
+            });
+        },
+        close() {
+            this.$store.dispatch('authModalClose');
         }
     }
 }
