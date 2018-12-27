@@ -1,7 +1,7 @@
 <template>
         <div class="dashboard-wrap">
             <div class="main">
-                timeline
+                <art-post v-for="(p, index) in posts" :key="index" :post="p"></art-post>
             </div>
             <aside class="sidebar">
                 <recent-followers></recent-followers>
@@ -13,11 +13,19 @@
 <script>
 import artSales from '@/components/user/listings/sales-widget'
 import recentFollowers from '@/components/user/dashboard/followers-widget/widget'
+import artPost from '@/components/timeline/post'
+import postsData from '@/assets/data/posts'
 export default {
     name: 'User_Dashboard',
+    data() {
+        return {
+            posts: postsData
+        }
+    },
     components: {
         artSales,
-        recentFollowers
+        recentFollowers,
+        artPost
     }
 }
 </script>

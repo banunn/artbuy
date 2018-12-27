@@ -62,7 +62,6 @@ export default {
                 );
              });            
         },
-
         // Use these controls to display the proper sign in / up / confirm modals anywhere throughout the site
         authSignUp({commit, state, getters}) {
             console.log('Sign Up');
