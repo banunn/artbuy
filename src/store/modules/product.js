@@ -37,11 +37,7 @@ export default {
     },
     actions: {
         getProducts({getters, state, commit}) {
-            axios.post('https://my.api.mockaroo.com/artbuy_products.json?key=5f0f46b0')
-                .then(function(response) {
-                    var data = response.data;
-                    commit('setProducts', data);
-                })
+            commit('setProducts', products);
         },
         viewProductPreview({getters, state, commit}, product) {
             return new Promise(function(resolve, reject) {
@@ -66,6 +62,7 @@ export default {
             let product = _.find(state.productList, function(i) {
                 return i.id == id;
             });
+            console.log('');
             if(product) {
                 console.log(product);
                 return new Promise(function(resolve) {

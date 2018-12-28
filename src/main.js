@@ -19,6 +19,7 @@ Vue.use(VueCurrencyFilter,
     symbol : '$',
     thousandsSeparator: ',',
     fractionCount:0,
+    decimalPlaces: 2,
     fractionSeparator: ',',
     symbolPosition: 'front',
     symbolSpacing: false

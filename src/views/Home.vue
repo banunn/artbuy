@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     productsList() {
-      return this.$store.getters.productsList;
+      return products;
     }
   }
 };

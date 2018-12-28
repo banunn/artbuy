@@ -1,7 +1,8 @@
 <template>
     <div class="top-nav">
         <router-link to="/">
-            <img class="logo" src="../../assets/logo.png" alt="">
+            <img class="logo" src="../../assets/artbuy_logo_white.svg" alt="">
+            <span>Find Art, Buy Art, Sell Art</span>
         </router-link>
         <nav-tools></nav-tools>
     </div>
@@ -26,6 +27,17 @@ export default {
         justify-content: space-between;
         align-items: center;
         padding: 0 22px;
+        span {
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;	
+            font-weight: 600;	
+            letter-spacing: 0.5px;	
+            line-height: 24px;
+            margin-left: 12px;
+            position: relative;
+            top: -1px;
+        }
     }
     .logo {
         max-width: 100px;

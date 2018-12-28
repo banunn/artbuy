@@ -31,7 +31,7 @@
                 </div>
             </div>
             <footer class="form-foot">
-                <button class="btn-primary">next</button>
+                <button @click="next" class="btn-primary">next</button>
             </footer>
         </div>
     </div>
@@ -87,6 +87,13 @@ export default {
         },
         selectRole(r) {
             this.selectedRole = r;
+        },
+        next() {
+            if(this.selectedIntention.id == 2 || this.selectedIntention.id == 3) {
+                this.$router.push({name: 'onboarding plan'});
+            } else {
+                this.$store.dispatch('confirmAccountModal');
+            }
         }
     }
 }

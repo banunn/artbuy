@@ -9,7 +9,7 @@
         <figure class="image">
             <img :src="product.art.photoUrl" alt="">
         </figure>
-        <footer class="image-meta">
+        <footer :class="{'pad-top': !isProductPage}" class="image-meta">
             <div class="cta">
                 <button class="btn-primary"><i class="material-icons">thumb_up</i><span>Appreciate</span></button>
                 <button class="btn-social"><img src="@/assets/icon-fb.svg" class="social-icon" alt="like on facebook"><span>Share</span></button>
@@ -98,6 +98,9 @@ export default {
         display: flex;
         justify-content: space-between;
         background-color: #F5F7F7;
+        &.pad-top {
+            padding-top: 24px;
+        }
         button {
             display: inline-flex;
             align-items: center;

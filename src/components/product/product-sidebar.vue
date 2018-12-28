@@ -2,7 +2,7 @@
     <aside v-if="product" class="sidebar">
         <header class="head">
             <div class="meta">
-                <aside class="user-icon"><img :src="product.author.photoUrl" alt=""></aside>
+                <aside @click="goToUserProfile" class="user-icon"><img :src="product.author.photoUrl" alt=""></aside>
                 <div class="meta-detail">
                     <h3>{{product.author.name}}</h3>
                     <span><i class="material-icons">location_on</i> {{product.author.location.city + ', ' + product.author.location.state}}</span>
@@ -13,14 +13,14 @@
         <section class="content">
             <h5 class="tag genre">Contemporary</h5>
             <h2 class="title">{{product.art.name}}</h2>
-            <p>Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.</p>
+            <!-- <p>Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.</p> -->
         </section>
         <footer class="foot">
             <span>{{product.art.dimensions}}</span>
             <h3>{{product.art.price | currency}}</h3>
         </footer>
         <footer class="action-foot">
-            <button class="purchase btn-primary">Purchase</button>
+            <button @click="addToCart" class="purchase btn-primary">Purchase</button>
             <button class="btn-secondary">Add To Collection</button>
             <button v-if="!isProductPage" @click="viewProduct" class="btn-secondary">View More</button>
         </footer>
@@ -40,7 +40,18 @@ export default {
           return vm.$store.dispatch('closeProductPreview').then(function() {
              vm.$router.push({name: 'product', params: {id: p.id}});
           })
-      }
+      },
+      addToCart() {
+          var item = this.product;
+          this.$store.dispatch('addItemToCart', item);
+      },
+      goToUserProfile() {
+          const vm = this;
+        var uid = this.product.author.id;
+        vm.$store.dispatch('closeProductPreview').then(function() {
+             vm.$router.push({name: 'user dashboard', params: {id: uid}});
+        })
+      },
     },
     computed: {
         isProductPage() {

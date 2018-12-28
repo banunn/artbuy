@@ -6,6 +6,8 @@ import createPersistedState from 'vuex-persistedstate'
 import product from './modules/product'
 import user from './modules/user'
 import subscription from './modules/subscription'
+import onboarding from './modules/onboarding'
+import cart from './modules/cart'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -13,7 +15,9 @@ export default new Vuex.Store({
   modules: {
     product,
     user,
-    subscription
+    subscription,
+    onboarding,
+    cart
   },
   state: {
     

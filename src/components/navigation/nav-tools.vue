@@ -1,18 +1,17 @@
 <template>
   <div class="nav-tools">
     <aside v-if="!userLoggedIn" class="nav-tools">
-      <nav>
-        <a href="#" class="link">Find</a>
-        <a href="#" class="link">Buy</a>
-        <a href class="link">Sell</a>
-      </nav>
+
       <div class="action">
+              <button @click="openCart" class="icon-btn cart">
+        <i class="material-icons">shopping_cart</i>
+      </button>
         <button @click="login" class="btn-outline">Login</button>
         <button @click="signUp" class="sign-up">Sign Up</button>
       </div>
     </aside>
     <aside v-if="userLoggedIn" class="nav-tools logged">
-      <button class="icon-btn">
+      <button @click="openCart" class="icon-btn">
         <i class="material-icons">shopping_cart</i>
       </button>
       <button @click="logout" class="icon-btn">
@@ -41,6 +40,9 @@ export default {
     },
     logout() {
       return this.$store.dispatch('authUserLogOut');
+    },
+    openCart() {
+      return this.$store.dispatch('showCart');
     }
   },
   computed: {
@@ -105,6 +107,17 @@ export default {
       }
     }
   }
+}
+
+.action {
+  display: flex;
+  align-items: center;
+}
+
+.cart {
+  padding:0;
+  margin-right: 12px;
+  margin-top: -2px;
 }
 .user-img {
     margin-left: 28px;

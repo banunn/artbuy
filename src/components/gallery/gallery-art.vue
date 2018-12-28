@@ -1,6 +1,6 @@
 <template>
     <figure class="art" @click="previewProduct">
-        <img class="bg" :src="item.art.photoUrl" alt="">
+        <img class="bg" :src="baseUrl + item.art.photoUrl" alt="">
         <div class="detail">
             <header>
                 <div class="meta">
@@ -33,6 +33,11 @@ export default {
     name: 'gallery-art-item',
     props: {
         item: Object
+    },
+    data () {
+    return {
+        baseUrl: process.env.BASE_URL
+    }
     },
     methods: {
         previewProduct() {

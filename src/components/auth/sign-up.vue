@@ -3,7 +3,7 @@
         <button @click="close" class="icon-btn close"><i class="material-icons">clear</i></button>
         <div class="form">
             <header>
-                <img src="@/assets/artbuy-white.png" alt="">
+                <img src="@/assets/artbuy_logo.svg" alt="">
             </header>
             <div class="form-content">
                 <h1>Join ArtBuy</h1>
@@ -53,6 +53,12 @@ export default {
 .form {
     .form-content {
         margin-top: 56px;
+    }
+        header {
+        img {
+            max-width: 85px;
+            height: auto;
+        }
     }
 }
 </style>

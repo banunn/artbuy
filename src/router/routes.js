@@ -8,11 +8,6 @@ export default [
     meta: {
       hasNav: true
     },
-    beforeEnter(to, from, next) {
-      store.dispatch('getProducts').then(function() {
-        next();
-      });
-    },
   },
   {
     path: '/about',
@@ -169,8 +164,50 @@ export default [
         meta: {
           hasNav: true,
         },
-        component: () => import('../views/onboarding/children/welcome')
+        component: () => import('../views/onboarding/children/payment')
       },
     ]
   },
+  {
+    path: '/checkout',
+    name: 'checkout',
+    meta: {
+      hasNav: true
+    },
+    component: () => import('../views/checkout/checkout'),
+    children:[
+      {
+        path: '',
+        name: 'checkout customer information',
+        meta: {
+          hasNav: true,
+        },
+        component: () => import('../views/checkout/children/customer-info')
+      },
+      {
+        path: 'shipping-method',
+        name: 'checkout shipping method',
+        meta: {
+          hasNav: true,
+        },
+        component: () => import('../views/checkout/children/shipping-method')
+      },
+      {
+        path: 'payment-method',
+        name: 'checkout payment method',
+        meta: {
+          hasNav: true,
+        },
+        component: () => import('../views/checkout/children/payment-method')
+      },
+      {
+        path: 'complete',
+        name: 'checkout complete',
+        meta: {
+          hasNav: true,
+        },
+        component: () => import('../views/checkout/children/complete')
+      },
+    ]
+  }
 ]
