@@ -1,5 +1,5 @@
 <template>
-    <div class="hero" :style="styles">
+    <div class="hero">
         <div class="content">
             <h1 class="title" v-if="head">{{head}}</h1>
             <h4 class="sub" v-if="sub">{{sub}}</h4>
@@ -15,17 +15,11 @@ export default {
         sub: String,
         bg: String
     },
-    computed: {
-        styles() {
-            if(this.bg) {
-                return {
-                    'background-image': 'url(' + this.bg + ')',
-                    'background-repeat': 'no-repeat',
-                    'background-size': 'cover'
-                }
-            }
+    data() {
+        return {
+            baseUrl: process.env.BASE_URL
         }
-    }
+    },
 }
 </script>
 
@@ -40,6 +34,9 @@ export default {
         justify-content: center;
         align-items: center;
         background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('../../assets/hero.jpg');
         &:after {
             content: '';
             position: absolute;

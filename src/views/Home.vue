@@ -2,8 +2,7 @@
   <div class="home">
       <home-hero
         head="Love Art?"
-        sub="Find it. Buy it. Sell it."
-        :bg="heroBg">
+        sub="Find it. Buy it. Sell it.">
       </home-hero>
       <home-search></home-search>
 

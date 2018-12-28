@@ -21,7 +21,7 @@
             </footer>
         </div>
         <div class="media">
-            <img src="https://images.unsplash.com/photo-1528491836309-55b4a140b78a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80" alt="">
+            <img src="@/assets/modal_bg.jpg" alt="">
         </div>
     </div>
 </template>
