@@ -87,7 +87,7 @@ export default {
         border-top: 1px solid #E8EAEB;
         button {
             -webkit-appearance: none;
-            border-radius: 2px;
+            border-radius: 0px;
             border-width: 1px;
             border-style: solid;
             height: 24px;

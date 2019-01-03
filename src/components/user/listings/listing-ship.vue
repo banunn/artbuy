@@ -1,14 +1,14 @@
 <template>
-    <art-widget :title="'Status'" :help="help">
+    <art-widget :title="'Status'">
         <template slot="body">
             <header>
-                 <i class="icon-warning"></i>
-                 <p><span class="status bold">Event</span> created on December 18, 2019</p>
+                 <i class="icon-error"></i>
+                 <p><span class="status bold">Sold</span> on December 18, 2019</p>
             </header>
         </template>
         <template slot="footer">
             <button class="btn-block-primary">
-                Save
+                <i class="material-icons">receipt</i> Download Shipping Label
             </button>
         </template>
     </art-widget>
@@ -16,16 +16,12 @@
 <script>
 import artWidget from '@/components/general/widget'
 export default {
-    name: 'event_status_widget',
+    name: 'listing_status_widget_ship',
     components: {
         artWidget
     },
     data() {
         return {
-            help: {
-                title: 'This event has not been published yet.',
-                text: 'To make this event public, choose “Save & Publish.” If you’re not quite ready to make this event public choose “Save as Draft.” '
-            }
         }
     }
 }
@@ -43,6 +39,10 @@ export default {
     }
     button {
         margin-bottom: 8px;
+        i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
         &:last-child {
             margin-bottom:0;
         }

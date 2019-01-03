@@ -6,6 +6,7 @@
         <span class="detail">{{event.location}}</span>
         <span class="detail">{{event.createDate}}</span>
         <span class="detail">{{event.status}}</span>
+        <button @click="remove" title="remove event" class="icon-btn delete-btn"><i class="material-icons">delete</i></button>
     </div>
 </template>
 
@@ -14,6 +15,12 @@ export default {
     name: 'event-item',
     props: {
         event: Object
+    },
+    methods: {
+        remove() {
+            let e = this.event;
+            return this.$emit('remove', e);
+        }
     }
 }
 </script>
@@ -25,6 +32,7 @@ export default {
         margin-left: 18px;
         height: 60px;
         border-bottom: 1px solid #E8EAEB;
+        position: relative;
         &:hover {
             background-color: #FAFCFC;
         }
@@ -45,6 +53,26 @@ export default {
                 opacity: 1;
                 font-weight: bold;
                 flex: 1.5;
+            }
+        }
+        .delete-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            i {
+                color: rgba(#000, .25);
+            }
+        }
+        &:hover {
+            .delete-btn {
+                opacity: 1;
+                &:hover {
+                    i {
+                        color: #111215;
+                    }
+                }
             }
         }
     }

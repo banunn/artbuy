@@ -123,7 +123,7 @@ export default {
             button {
                 height: 24px;	
                 width: 105px;	
-                border-radius: 2px;	
+                border-radius: 0px;	
                 background-color: #111215;
                 border: none;
                 color: #fff;

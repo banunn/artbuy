@@ -3,7 +3,7 @@
         <div class="form-row">
             <div>
                 <header class="label">Title</header>
-                <input type="text" name="" id="" class="input sm">
+                <input placeholder="Event Title" type="text" name="" id="" class="input sm">
             </div>
         </div>
         <div class="form-row">
@@ -17,11 +17,11 @@
         <div class="form-row flex">
             <div>
                 <header class="label">Start Time</header>
-                <input type="datetime" class="input sm" name="" id="">
+                <input type="time" class="input sm" name="" id="">
             </div>
             <div>
                 <header class="label">End Time</header>
-                <input type="datetime" class="input sm" name="" id="">
+                <input type="time" class="input sm" name="" id="">
             </div>
         </div>
         <div class="form-row">
@@ -33,11 +33,7 @@
         <div class="form-row flex">
             <div>
                 <header class="label">Email Contact</header>
-                <input type="text" name="" id="" class="input sm">
-            </div>
-            <div>
-                <header class="label">Phone Contact</header>
-                <input type="text" name="" id="" class="input sm">
+                <input placeholder="email@domain.com" type="text" name="" id="" class="input sm">
             </div>
         </div>
     </div>

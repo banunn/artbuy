@@ -2,7 +2,6 @@
 <div class="purchase-complete">
     <p>Thanks for placing an order with ArtBuy. We’re excited to deliver these amazing works of art straight to your front door!</p>
     <p>We’ll be sending you an email with tracking information for your order soon. You can also visit the order history section of your account anytime to check the status and view tracking information.</p>
-    <p>In the meantime, go find the perfect place to display your new art!</p>
     <button @click="$router.push('/')" class="btn-block-primary">Done</button>
 </div>
 </template>

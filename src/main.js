@@ -2,18 +2,21 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router/router'
 import store from './store/store'
-import './registerServiceWorker'
+// import './registerServiceWorker'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueMasonry from 'vue-masonry-css'
 import VueCurrencyFilter from 'vue-currency-filter'
 import VueTransmit from "vue-transmit";
 import { sync } from 'vuex-router-sync'
+import 'viewerjs/dist/viewer.css'
+import Viewer from 'v-viewer'
 
 const unsync = sync(store, router) // done. Returns an unsync callback fn
 const _ = require('lodash');
 
 Vue.use(VueMasonry);
+Vue.use(Viewer);
 Vue.use(VueCurrencyFilter,
   {
     symbol : '$',

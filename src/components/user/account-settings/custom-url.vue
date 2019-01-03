@@ -2,7 +2,7 @@
     <art-widget :title="'Custom URL'" :help="help">
         <template slot="body">
             <header class="url">
-                <i class="icon-success"></i>
+                <!-- <i class="icon-success"></i> -->
                 <div class="input-group">
                     <input type="text" class="input sm" :placeholder="user.firstName + '-' + user.lastName">
                     <aside class="context">.artbuy.com</aside>

@@ -166,6 +166,14 @@ export default [
         },
         component: () => import('../views/onboarding/children/payment')
       },
+      {
+        path: 'password-reset',
+        name: 'password reset',
+        meta: {
+          hasNav: true,
+        },
+        component: () => import('../views/onboarding/children/forgot-password')
+      },
     ]
   },
   {

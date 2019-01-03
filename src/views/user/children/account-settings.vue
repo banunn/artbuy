@@ -2,6 +2,7 @@
     <div class="account-settings">
         <main class="main">
             <user-detail></user-detail>
+            <subscription-non-member></subscription-non-member>
             <subscription></subscription>
             <payment-methods-preview></payment-methods-preview>
         </main>
@@ -19,6 +20,7 @@ import managePassword from '@/components/user/account-settings/manage-password'
 import orderHistory from '@/components/user/account-settings/order-history'
 import paymentMethodsPreview from '@/components/user/account-settings/payment-methods-preview'
 import subscription from '@/components/user/account-settings/subscription'
+import subscriptionNonMember from '@/components/user/account-settings/subscription-non-member'
 import userDetail from '@/components/user/account-settings/user-detail'
 export default {
     name: 'account-settings',
@@ -28,7 +30,8 @@ export default {
         orderHistory,
         paymentMethodsPreview,
         subscription,
-        userDetail
+        userDetail,
+        subscriptionNonMember
     }
 }
 </script>

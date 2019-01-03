@@ -3,7 +3,7 @@
         <button @click="close" class="icon-btn close"><i class="material-icons">clear</i></button>
         <header class="brand">
             <header>
-                <img src="@/assets/artbuy-white.png" alt="">
+                <img src="@/assets/artbuy_logo.svg" alt="">
             </header>
         </header>
         <div class="confirm-content">
@@ -42,6 +42,13 @@ export default {
         padding: 48px 48px 24px 48px;
         .brand {
             margin-bottom: 60px;
+            header {
+                text-align: center;
+                img {
+                    max-width: 85px;
+                    height: auto;
+                }
+            }
         }
         .confirm-content {
             text-align: center;

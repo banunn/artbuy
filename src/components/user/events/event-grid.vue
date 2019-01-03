@@ -16,7 +16,7 @@
                 <i v-if="h === 'event date'" class="material-icons">arrow_drop_down</i></div>
         </div>
         <div class="table-body">
-            <event v-for="(e, index) in events" :key="index" :event="e"></event>
+            <event v-on:remove="removeEvent(e)" v-for="(e, index) in events" :key="index" :event="e"></event>
         </div>
     </div>
 </template>
@@ -27,6 +27,21 @@ export default {
     name: 'event-grid',
     components: {
         event
+    },
+    methods: {
+        removeEvent(event) {
+            const vm = this;
+            var c = confirm("Are you sure you want to remove" + event.name + "?");
+            if(c == true) {
+                console.log('running');
+                var i = _.findIndex(vm.events, function(e) {
+                    return e.name == event.name;
+                });
+                return vm.events.splice(i, 1);
+            } else {
+                console.log('Event Removal Cancelled');
+            }
+        }
     },
     data() {
         return {
@@ -144,7 +159,7 @@ export default {
             button {
                 height: 24px;	
                 width: 105px;	
-                border-radius: 2px;	
+                border-radius: 0px;	
                 background-color: #111215;
                 border: none;
                 color: #fff;

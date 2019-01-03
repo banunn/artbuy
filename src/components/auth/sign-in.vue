@@ -10,7 +10,7 @@
                 <input type="email" placeholder="you@email.com">
                 <input type="password" placeholder="password">
                 <section class="forgot">
-                    <span>forgot password</span>
+                    <span @click="goToPassReset">forgot password</span>
                 </section>
                 <button @click="logIn" class="btn-block-primary">Log In</button>
                 <footer class="form-content-foot">
@@ -35,6 +35,10 @@ export default {
         goToSignUp() {
             this.$store.dispatch('authSignUp');
         },
+        goToPassReset() {
+            this.$router.push({name: 'password reset'});
+            this.close();
+        },
         logIn() {
             this.$store.dispatch('authUserSignIn');
         },
@@ -49,11 +53,16 @@ export default {
 .form {
     .form-content {
         margin-top: 80px;
+        h1 {
+            text-align: center;
+        }
     }
     header {
+        text-align: center;
         img {
             max-width: 85px;
             height: auto;
+            display: inline;
         }
     }
 }

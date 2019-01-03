@@ -6,7 +6,7 @@
                 <button class="icon-btn"><i class="material-icons">arrow_forward</i></button>
             </div> -->
         </header>
-        <figure class="image">
+        <figure class="image" v-viewer>
             <img :src="product.art.photoUrl" alt="">
         </figure>
         <footer :class="{'pad-top': !isProductPage}" class="image-meta">

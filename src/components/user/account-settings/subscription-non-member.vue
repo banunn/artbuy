@@ -1,54 +1,23 @@
 <template>
     <div class="user-subscription">
         <header class="label">subscription</header>
-        <div class="tier-list">
-            <div class="tier" :class="{'selected': t.selected}" v-for="(t, index) in tiers" :key="index">
-                <div class="detail">
-                    <i class="material-icons">{{t.selected ? 'radio_button_checked' : 'radio_button_unchecked'}}</i>
-                    <span>{{t.name}}</span>
-                </div>
-                <div class="meta">
-                    <span>{{'$' + t.price + '/' + t.frequency}}</span>
-                </div>
-            </div>
+        <div class="us-content">
+            <p>{{msg}}</p>
         </div>
         <footer class="foot">
-            <div class="link">
-                <a>View Billing History</a>
-            </div>
-            <div class="ctrl">
-                <button class="btn-light">Cancel</button>
-                <button @click="viewSubs" class="btn-dark">Change Plan</button>
-            </div>
+            <button class="btn-primary btn-dark">
+                Choose Plan
+            </button>
         </footer>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'user_subscription',
+    name: 'non_member_subscription',
     data() {
         return {
-            tiers: [
-                {
-                    name: 'Individual',
-                    price: '0',
-                    frequency: 'month',
-                    selected: true
-                },
-                {
-                    name: 'Team',
-                    price: '9.95',
-                    frequency: 'month',
-                    selected: false
-                },
-                {
-                    name: 'Enterprise',
-                    price: '49.96',
-                    frequency: 'month',
-                    selected: false
-                }
-            ]
+            msg: "Choose a subscription and start selling your work for as little as $9.95/month!"
         }
     },
     methods: {
@@ -118,7 +87,6 @@ export default {
             letter-spacing: 1px;	
             line-height: 12px;
             background: none;
-            margin-left: 10px;
             &.btn-dark {
                 background-color: #111215;
                 color: #fff;
@@ -128,5 +96,12 @@ export default {
 
             }
         }
+    }
+
+    .us-content {
+        font-size: 14px;	
+        font-weight: 500;	
+        letter-spacing: 0.1px;	
+        line-height: 20px;
     }
 </style>

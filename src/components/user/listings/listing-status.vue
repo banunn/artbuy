@@ -8,10 +8,7 @@
         </template>
         <template slot="footer">
             <button class="btn-block-primary">
-                Save &amp; Publish
-            </button>
-            <button class="btn-block-secondary">
-                Save As Draft
+                Save
             </button>
         </template>
     </art-widget>

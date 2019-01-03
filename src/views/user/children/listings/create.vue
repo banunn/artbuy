@@ -22,10 +22,11 @@
         </header>
         <div class="listing-wrap">
             <div class="main">
-                <listing-form></listing-form>
                 <art-uploader></art-uploader>
+                <listing-form></listing-form>
             </div>
             <aside class="sidebar">
+                <listing-ship></listing-ship>
                 <listing-status></listing-status>
             </aside>
         </div>
@@ -33,6 +34,7 @@
 </template>
 
 <script>
+import listingShip from '@/components/user/listings/listing-ship'
 import listingStatus from '@/components/user/listings/listing-status'
 import listingForm from '@/components/user/listings/listing-details'
 import artUploader from '@/components/user/listings/artwork'
@@ -41,7 +43,8 @@ export default {
     components: {
         listingStatus,
         listingForm,
-        artUploader
+        artUploader,
+        listingShip
     }
 
 }

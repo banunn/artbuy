@@ -17,6 +17,18 @@
         </div>
         <div class="form-row">
             <div>
+                <header class="label">Medium</header>
+                <select class="select" name="" id="">
+                    <option value="contemporary">Canvas</option>
+                    <option value="Card Stock">Card Stock</option>
+                    <option value="Glass">Glass</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Paper">Paper</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div>
                 <header class="label">Description</header>
                 <textarea name=""  placeholder="Describe this item" class="textarea"></textarea>
             </div>

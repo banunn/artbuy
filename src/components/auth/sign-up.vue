@@ -53,11 +53,16 @@ export default {
 .form {
     .form-content {
         margin-top: 56px;
+        h1 {
+            text-align: center;
+        }
     }
-        header {
+    header {
+        text-align: center;
         img {
             max-width: 85px;
             height: auto;
+            display: inline;
         }
     }
 }
