@@ -17,7 +17,7 @@
                 <i v-if="h === 'status'" class="material-icons">arrow_drop_down</i></div>
         </div>
         <div class="table-body">
-            <listing v-for="(l, index) in listings" :key="index" :listing="l"></listing>
+            <listing v-on:remove="removeListing(l)" v-for="(l, index) in listings" :key="index" :listing="l"></listing>
         </div>
     </div>
 </template>
@@ -48,40 +48,70 @@ export default {
             sortBy: '',
             headers: [
                 'title',
+                'artist',
                 'date added',
                 'price',
+                'likes',
+                'comments',
                 'status'
             ],
             listings: [
                 {
-                    name: 'Pictures In The Sky',
+                    name: 'Pictures In The Sky 1',
+                    artist: 'artist name',
+                    appreciations: '4',
+                    comments: '2',
                     photoUrl: 'https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=180&w=180&q=80',
                     date: '01/28/2018',
                     price: '$3,800',
                     status: 'Sold'
                 },
                 {
-                    name: 'Pictures In The Sky',
+                    name: 'Pictures In The Sky 2',
+                    artist: 'artist name',
+                    appreciations: '4',
+                    comments: '2',
                     photoUrl: 'https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=180&w=180&q=80',
                     date: '01/28/2018',
                     price: '$3,800',
                     status: 'Sold'
                 },
                 {
-                    name: 'Pictures In The Sky',
+                    name: 'Pictures In The Sky 3',
+                    artist: 'artist name',
+                    appreciations: '4',
+                    comments: '2',
                     photoUrl: 'https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=180&w=180&q=80',
                     date: '01/28/2018',
                     price: '$3,800',
                     status: 'Sold'
                 },
                 {
-                    name: 'Pictures In The Sky',
+                    name: 'Pictures In The Sky 4',
+                    artist: 'artist name',
+                    appreciations: '4',
+                    comments: '2',
                     photoUrl: 'https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=180&w=180&q=80',
                     date: '01/28/2018',
                     price: '$3,800',
                     status: 'Sold'
                 },
             ]
+        }
+    },
+    methods: {
+        removeListing(listing) {
+            const vm = this;
+            var c = confirm("Are you sure you want to remove" + listing.name + "?");
+            if(c == true) {
+                console.log('running');
+                var i = _.findIndex(vm.listings, function(l) {
+                    return l.name == listing.name;
+                });
+                return vm.listings.splice(i, 1);
+            } else {
+                console.log('Listing Removal Cancelled');
+            }
         }
     }
 }

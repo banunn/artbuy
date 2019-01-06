@@ -1,10 +1,22 @@
 <template>
     <aside class="user-sidebar">
         <figure class="profile-img">
-            <img v-if="user.photoUrl" :src="user.photoUrl" alt="">
+            <croppa v-model="editImg"
+                :height="288"
+                :width="284"
+                :disabled="editImgState.disabled"
+                :show-remove-button="!editImgState.disabled">
+                 <img :src="user.photoUrl" slot="initial">
+            </croppa>
             <span class="user-type">
                 {{user.userType}}
             </span>
+            <div v-if="editImgState.disabled" @click="editUserImg" class="edit btn">
+                <i class="material-icons">camera_alt</i><span>Edit</span>
+            </div>
+            <div v-else @click="saveUserImg" class="edit btn">
+                <i class="material-icons">camera_alt</i><span>Save</span>
+            </div>
         </figure>
         <div class="user-meta">
             <h1>{{user.firstName + ' ' + user.lastName}}</h1>
@@ -52,11 +64,36 @@
 </template>
 
 <script>
+
 export default {
     name: 'user-sidebar',
+    data() {
+        return {
+            editImg: {},
+            editImgState: {
+                disabled: true
+            },
+            isMyProfile: true
+        }
+    },
     computed: {
         user() {
             return this.$store.getters.userInfo;
+        }
+    },
+    methods: {
+        editUserImg() {
+            return this.editImgState.disabled = false;
+        },
+        saveUserImg() {
+            // execute saving call here. 
+            return this.editImgState.disabled = true;
+        },
+        exampleImgSaveCall() {
+            // More documentation available at: https://zhanziyang.github.io/vue-croppa/#/
+            this.myCroppa.generateBlob((blob) => {
+                // write code to upload the cropped image file (a file is a blob)
+            }, 'image/jpeg', 0.8) // 80% compressed jpeg file
         }
     }
 }
@@ -95,6 +132,29 @@ export default {
                 letter-spacing: 1.5px;	
                 line-height: 12px;
                 text-transform: uppercase;
+            }
+            .edit {
+                position: absolute;
+                display: inline-flex;
+                align-items: center;
+                cursor: pointer;
+                bottom: 6px;
+                right: 6px;
+                background: rgba(#fff, .6);
+                padding: 3px 8px;
+                border-radius: 14px;
+                box-shadow: 0px 2px 3px rgba(#000, .2);
+                font-size: 9px;	
+                font-weight: bold;	
+                letter-spacing: 0.9px;	
+                line-height: 12px;
+                i {
+                    font-size: 16px;
+                    margin-right: 4px;
+                }
+                &:active {
+                    transform: translateY(1px);
+                }
             }
         }
         .user-meta {

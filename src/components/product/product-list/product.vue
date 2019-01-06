@@ -6,7 +6,10 @@
 
 <script>
 export default {
-    name: 'product-list'
+    name: 'product-list',
+    props: {
+        product: Object
+    }
 }
 </script>
 

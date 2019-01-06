@@ -3,9 +3,9 @@
             <div class="main">
                 <listings-grid></listings-grid>
             </div>
-            <aside class="sidebar">
+ <!--            <aside class="sidebar">
                 <sales-widget></sales-widget>
-            </aside>
+            </aside> -->
         </div>
 </template>
 

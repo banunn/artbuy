@@ -14,6 +14,7 @@
                 <button class="btn-primary"><i class="material-icons">thumb_up</i><span>Appreciate</span></button>
                 <button class="btn-social"><img src="@/assets/icon-fb.svg" class="social-icon" alt="like on facebook"><span>Share</span></button>
                 <button class="btn-social"><img src="@/assets/icon-tw.svg" class="social-icon" alt="share on twitter"><span>Share</span></button>
+                <button class="btn-social"><img src="@/assets/icon-inst.svg" class="social-icon" alt="share on twitter"><span>Share</span></button>
             </div>
             <div class="social">
                 <button class="social-action"><i class="material-icons">thumb_up</i><span>236</span></button>

@@ -20,8 +20,9 @@
             <h3>{{product.art.price | currency}}</h3>
         </footer>
         <footer class="action-foot">
-            <button @click="addToCart" class="purchase btn-primary">Purchase</button>
+            <button @click="addToCart" class="purchase btn-primary">Buy Now</button>
             <button class="btn-secondary">Add To Collection</button>
+            <button class="btn-secondary">Remove From Collection</button>
             <button v-if="!isProductPage" @click="viewProduct" class="btn-secondary">View More</button>
         </footer>
     </aside>  
@@ -83,7 +84,7 @@ export default {
         height: 24px;
         width: 71px;	
         border: 1px solid rgba(17,18,21,0.5);	
-        border-radius: 12px;
+        border-radius: 0px;
         background: none;
         color: #111215;	
         font-size: 9px;	

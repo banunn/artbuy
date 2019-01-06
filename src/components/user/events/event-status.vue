@@ -23,8 +23,8 @@ export default {
     data() {
         return {
             help: {
-                title: 'This event has not been published yet.',
-                text: 'To make this event public, choose “Save & Publish.” If you’re not quite ready to make this event public choose “Save as Draft.” '
+                title: 'This is conditional help text',
+                text: 'To make this event public, choose “Save” '
             }
         }
     }

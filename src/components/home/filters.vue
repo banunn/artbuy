@@ -4,7 +4,7 @@
             <div class="meta">
                 <button v-for="(f, index) in facets" :key="index" class="filter-ctrl"><span>{{f.name}}</span><i class="material-icons">{{f.open ? 'arrow_drop_up' : 'arrow_drop_down'}}</i></button>
             </div>
-            <div class="ctrl">
+            <div v-if="viewStyle" class="ctrl">
                 <button title="view results in gallery" class="icon-btn"><i class="material-icons">dashboard</i></button>
                 <button title="view results in list" class="icon-btn"><i class="material-icons">view_list</i></button>
             </div>
@@ -17,6 +17,7 @@ export default {
     name: 'home-search-filters',
     data() {
         return {
+            viewStyle: false,
             facets: [
                 {
                     name: 'style',

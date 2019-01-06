@@ -174,6 +174,14 @@ export default [
         },
         component: () => import('../views/onboarding/children/forgot-password')
       },
+      {
+        path: 'password-reset check',
+        name: 'password reset check',
+        meta: {
+          hasNav: true,
+        },
+        component: () => import('../views/onboarding/children/forgot-password-check')
+      },
     ]
   },
   {

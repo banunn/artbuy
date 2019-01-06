@@ -1,6 +1,6 @@
 <template>
       <div class="wrap gallery-grid">
-        <masonry :cols="{default: 3, 700: 2, 400: 1}" :gutter="{default: '30px'}">
+        <masonry :cols="{default: 2, 700: 2, 400: 1}" :gutter="{default: '30px'}">
           <gallery-art :item="item"  v-for="(item, index) in items" :key="index"></gallery-art>
         </masonry>
       </div>

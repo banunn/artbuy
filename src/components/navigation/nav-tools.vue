@@ -3,30 +3,43 @@
     <aside v-if="!userLoggedIn" class="nav-tools">
 
       <div class="action">
-              <button @click="openCart" class="icon-btn cart">
-        <i class="material-icons">shopping_cart</i>
+              <button @click="openCart" class="icon-btn cart cart-btn">
+          <i class="material-icons">shopping_cart</i>
       </button>
         <button @click="login" class="btn-outline">Login</button>
         <button @click="signUp" class="sign-up">Sign Up</button>
       </div>
     </aside>
     <aside v-if="userLoggedIn" class="nav-tools logged">
-      <button @click="openCart" class="icon-btn">
+      <button @click="openCart" class="icon-btn cart-btn">
+        <i v-if="cartItems.length" class="badge">{{cartItems.length}}</i>
         <i class="material-icons">shopping_cart</i>
       </button>
-      <button @click="logout" class="icon-btn">
-        <i class="material-icons">notifications</i>
-      </button>
-      <figure @click="goToUserProfile" class="user-img">
+      <figure @click="toggleSubMenu" class="user-img">
         <img v-if="user.photoUrl" :src="user.photoUrl" alt>
       </figure>
+      <aside v-on-clickaway="subMenuAway" v-if="subMenuOpen" class="user-menu">
+          <div class="menu-item">
+            <router-link @click.native="toggleSubMenu(false)" :to="{name: 'user dashboard', params: {id: user.uid}}">View My Profile</router-link>
+          </div>
+          <div class="menu-item">
+            <a @click="logout">Log Out</a>
+          </div>
+      </aside>
     </aside>
   </div>
 </template>
 
 <script>
+import { mixin as clickaway } from 'vue-clickaway';
 export default {
   name: "nav-tools",
+  mixins: [ clickaway ],
+  data() {
+    return {
+      subMenuOpen: false,
+    }
+  },
   methods: {
     login() {
       this.$store.dispatch("authSignIn");
@@ -39,10 +52,25 @@ export default {
       this.$router.push({name: 'user dashboard', params: {id: uid}});
     },
     logout() {
-      return this.$store.dispatch('authUserLogOut');
+      return this.$store.dispatch('authUserLogOut'),
+             this.toggleSubMenu(false);
     },
     openCart() {
       return this.$store.dispatch('showCart');
+    },
+    toggleSubMenu(arg) {
+      if(arg) {
+        this.subMenuOpen = arg;
+      } else {
+        this.subMenuOpen = !this.subMenuOpen;
+      }
+    },
+    subMenuAway() {
+      if(!this.subMenuOpen) {
+        return;
+      } else {
+        this.subMenuOpen = false;
+      }
     }
   },
   computed: {
@@ -51,6 +79,9 @@ export default {
     },
     user() {
       return this.$store.getters.userInfo;
+    },
+    cartItems() {
+        return this.$store.getters.userCart.items;
     }
   }
 };
@@ -60,6 +91,7 @@ export default {
 .nav-tools {
   display: flex;
   align-items: center;
+  position: relative;
   nav {
     margin-right: 20px;
     .link {
@@ -122,5 +154,45 @@ export default {
 .user-img {
     margin-left: 28px;
     cursor: pointer;
+}
+
+.user-menu {
+    position: absolute;
+    top: 50px;
+    right: -24px;
+    background: black;
+    z-index: 40;
+    box-shadow: 0px 10px 10px rgba(#000, .13);
+
+    .menu-item {
+      padding: 12px 24px;
+      a {
+        color:rgba(#fff, .65);
+        font-size: 12px;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          color: rgba(#fff,1);
+        }
+      }
+    }
+}
+
+.cart-btn {
+  position: relative;
+  .badge {
+    position: absolute;
+    top:-3px;
+    right:-3px;
+    height: 14px;
+    width: 14px;
+    background: #fff;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: #000 !important;
+    display: inline-flex;
+    box-shadow: 0px 1px 1px rgba(#000,.24);
+  }
 }
 </style>

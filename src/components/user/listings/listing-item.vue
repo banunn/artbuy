@@ -4,9 +4,14 @@
             <img :src="listing.photoUrl" alt="">
         </figure>
         <span class="detail title">{{listing.name}}</span>
+        <span class="detail">{{listing.artist}}</span>
         <span class="detail">{{listing.date}}</span>
         <span class="detail">{{listing.price}}</span>
+        <span class="detail">{{listing.appreciations}}</span>
+        <span class="detail">{{listing.comments}}</span>
         <span class="detail">{{listing.status}}</span>
+        <button @click="remove" title="remove event" class="icon-btn delete-btn"><i class="material-icons">delete</i></button>
+
     </div>
 </template>
 
@@ -15,6 +20,12 @@ export default {
     name: 'listing-item',
     props: {
         listing: Object
+    },
+    methods: {
+        remove() {
+            let l = this.event;
+            return this.$emit('remove', l);
+        }
     }
 }
 </script>
@@ -26,6 +37,7 @@ export default {
         margin-left: 18px;
         height: 60px;
         border-bottom: 1px solid #E8EAEB;
+        position: relative;
         &:hover {
             background-color: #FAFCFC;
         }
@@ -67,6 +79,26 @@ export default {
                     background-color: rgba(0,0,0,0.4);
                     border-radius: 2px;
                     min-width: 48px;
+                }
+            }
+        }
+        .delete-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            i {
+                color: rgba(#000, .25);
+            }
+        }
+        &:hover {
+            .delete-btn {
+                opacity: 1;
+                &:hover {
+                    i {
+                        color: #111215;
+                    }
                 }
             }
         }

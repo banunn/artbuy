@@ -2,22 +2,14 @@
     <div class="password-page">
         <div class="password-wrap">
 			<header class="head">
-					<h1>Reset Password</h1>
-					<h4>Choose a new password for {{userEmail}}</h4>
+					<h1>We've Sent You An Email...</h1>
+					<h4>Please check {{emailAddress}}</h4>
 			</header>
             <div class="form-wrap form">
-                <div class="form-row">
-                    <header class="label">New Password</header>
-                    <input class="input" type="password" v-model="password" />
-                </div>
-                <div class="form-row">
-                    <header class="label">Confirm Password</header>
-                    <input class="input" type="password" v-model="confirm" />
-                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis a saepe voluptatum pariatur reprehenderit aliquam itaque, animi nemo? Natus mollitia itaque veniam at ipsa?</p>
             </div>
             <footer class="foot">
-                <button @click="$router.push('/')" class="btn txt-btn btn-secondary">Cancel</button>
-                <button :class="{'disabled' : !match}" @click="$router.push({name: 'password reset check'})" class="btn txt-btn btn-primary">Reset Password</button>
+                <button @click="$router.push('/')" class="btn txt-btn btn-primary">Go Home</button>
             </footer>
 		</div>
     </div>
@@ -25,25 +17,14 @@
 
 <script>
 export default {
-    name: 'welcome',
+    name: 'forgot-password-check',
     data() {
         return {
-            password: '',
-			confirm: '',
-			userEmail: 'johnsmith@gmail.com'
+            emailAddress: 'example@domain.com'
         }
     },
     methods: {
 
-    },
-    computed: {
-        match() {
-			if(this.password.length && this.confirm.length) {
-					return this.password == this.confirm;
-			} else {
-					return false;
-			}
-		}
     }
 }
 </script>
@@ -57,7 +38,7 @@ export default {
 }
 
 .password-wrap {
-		height: 552px;	
+		height: 412px;	
 	width: 904px;	
 	border: 1px solid rgba(17,18,21,0.1);	
 	border-radius: 2px;
@@ -95,7 +76,7 @@ export default {
 		margin-top: 64px;
 		border-top: 1px solid rgba(#000, .1);
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-end;
 		button {
 			height: 48px;
 			padding: 0 20px;

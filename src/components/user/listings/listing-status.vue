@@ -3,7 +3,7 @@
         <template slot="body">
             <header>
                  <i class="icon-warning"></i>
-                 <p><span class="status bold">Draft</span> created on December 18, 2019</p>
+                 <p><span class="status bold">Published</span> December 18, 2019</p>
             </header>
         </template>
         <template slot="footer">
@@ -23,8 +23,8 @@ export default {
     data() {
         return {
             help: {
-                title: 'This listing has not been published yet.',
-                text: 'To make this listing public, choose “Save & Publish.” If you’re not quite ready to make this event public choose “Save as Draft.” '
+                title: 'This is conditional helptext.',
+                text: 'To make this listing public, choose “Save” '
             }
         }
     }
