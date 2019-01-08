@@ -36,7 +36,7 @@ export default {
             this.$store.dispatch('authSignUp');
         },
         goToPassReset() {
-            this.$router.push({name: 'password reset'});
+            this.$router.push({name: 'password reset request'});
             this.close();
         },
         logIn() {

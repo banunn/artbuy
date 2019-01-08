@@ -33,12 +33,12 @@ import productComments from './comment/product-comments'
 import productMeta from './product-meta'
 export default {
     name: 'modal-product-viewer',
+    props: {
+        product: Object
+    },
     components: {
         productComments,
         productMeta
-    },
-    props: {
-        product: Object
     },
     computed: {
         isProductPage() {

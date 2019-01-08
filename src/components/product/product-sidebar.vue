@@ -21,8 +21,8 @@
         </footer>
         <footer class="action-foot">
             <button @click="addToCart" class="purchase btn-primary">Buy Now</button>
-            <button class="btn-secondary">Add To Collection</button>
-            <button class="btn-secondary">Remove From Collection</button>
+            <button @click="collectionToggle" v-if="!isInCollection" class="btn-secondary">Add To Collection</button>
+            <button @click="collectionToggle" v-if="isInCollection" class="btn-secondary">Remove From Collection</button>
             <button v-if="!isProductPage" @click="viewProduct" class="btn-secondary">View More</button>
         </footer>
     </aside>  
@@ -34,7 +34,15 @@ export default {
   props: {
     product: Object
   },
+  data() {
+        return {
+            isInCollection: false
+        }
+  },
   methods: {
+      collectionToggle() {
+            return this.isInCollection = !this.isInCollection;
+      },
       viewProduct() {
           const vm = this;
           const p = vm.product;
