@@ -7,6 +7,7 @@
     <subscription-modal />
     <onboarding-modal />
     <user-cart />
+    <art-buy-footer></art-buy-footer>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import authModal from '@/components/auth/auth-modal'
 import subscriptionModal from '@/components/subscription/modal'
 import onboardingModal from '@/components/onboarding/modal'
 import userCart from '@/components/cart/cart'
+import artBuyFooter from '@/components/footer'
 export default {
   name: "main-app",
   components: {
@@ -25,7 +27,8 @@ export default {
     authModal,
     subscriptionModal,
     onboardingModal,
-    userCart
+    userCart,
+    artBuyFooter
   },
   computed: {
     flyoutOpen() {
@@ -38,4 +41,8 @@ export default {
 <style lang="scss">
 // Importing global styles to use application wide. Other components have scoped styles.
 @import "./styles/main";
+
+#app {
+  padding-bottom: 32px;
+}
 </style>

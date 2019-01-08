@@ -233,5 +233,41 @@ export default [
         component: () => import('../views/checkout/children/complete')
       },
     ]
-  }
+  },
+  {
+    path: '/terms-and-conditions',
+    name: 'terms',
+    component: () => import('../views/terms-and-conditions.vue'),
+    meta: {
+      hasNav: true,
+      pageName: 'Terms & Conditions'
+    },
+  },
+  {
+    path: '/privacy',
+    name: 'privacy',
+    component: () => import('../views/privacy.vue'),
+    meta: {
+      hasNav: true,
+      pageName: 'Privacy Policy'
+    },
+  },
+  {
+    path: '/faq',
+    name: 'faq',
+    component: () => import('../views/faq.vue'),
+    meta: {
+      hasNav: true,
+      pageName: "FAQ's"
+    },
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: () => import('../views/contact.vue'),
+    meta: {
+      hasNav: true,
+      pageName: 'Contact Us'
+    },
+  },
 ]

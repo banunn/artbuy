@@ -33,3 +33,31 @@ figure {
         }
     }
 }
+
+
+.page {
+
+    .page-wrap {
+        max-width: 1200px;
+        margin: 72px 48px;
+    }
+
+    .page-head {
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #eaeaea;
+        h2 {
+            margin:0;
+            font-size: 24px;	
+            font-weight: bold;	
+            letter-spacing: 0.17px;
+        }
+    }
+
+    .page-content {
+        opacity: 0.9;
+        font-size: 14px;	
+        font-weight: 500;	
+        line-height: 24px;
+    }
+}
