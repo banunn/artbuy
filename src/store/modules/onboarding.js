@@ -8,6 +8,10 @@ export default {
             open: false,
             subTitle: '',
             heading: ''
+        },
+        storyModal: {
+            open: false,
+            page: 1
         }
     },
     mutations: {
@@ -21,7 +25,16 @@ export default {
             // object should be {sub: 'text', head: 'text'}
             state.modal.subTitle = object.sub;
             state.modal.heading = object.head;
-        } 
+        },
+        openStoryOnboarding(state, arg) {
+            state.storyModal.open = true;
+            arg ? state.storyModal.page = arg : 1;
+        },
+        closeStoryOnboardingModal(state) {
+            state.storyModal.open = false;
+            state.storyModal.page = 1;
+        }
+
     },
     actions: {
         confirmSubscriptionModal({commit, dispatch}) {
@@ -60,6 +73,9 @@ export default {
     getters: {
         onboardingModal(state) {
             return state.modal;
+        },
+        onboardingStoryModal(state) {
+            return state.storyModal;
         }
     }
 }

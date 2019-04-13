@@ -12,7 +12,7 @@
             <div class="ctrl">
                 <button class="icon-btn">
                     <i class="material-icons">remove_red_eye</i>
-                    <span>View Public Listing</span>
+                    <span @click="$router.push({name: 'event', params: {id: 1}})">View Public Listing</span>
                 </button>
                 <button class="icon-btn">
                     <i class="material-icons">delete</i>
@@ -27,6 +27,8 @@
             </div>
             <aside class="sidebar">
                 <event-status></event-status>
+                <event-photos></event-photos>
+                <event-discussion></event-discussion>
             </aside>
         </div>
     </div>
@@ -36,12 +38,16 @@
 import eventStatus from '@/components/user/events/event-status'
 import eventDetails from '@/components/user/events/event-details'
 import eventLocation from '@/components/user/events/event-location'
+import eventPhotos from '@/components/user/events/event-photos'
+import eventDiscussion from '@/components/user/events/event-discussion'
 export default {
     name: 'create_event',
     components: {
         eventStatus,
         eventDetails,
-        eventLocation
+        eventLocation,
+        eventPhotos,
+        eventDiscussion
     }
 
 }

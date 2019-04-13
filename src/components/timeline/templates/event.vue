@@ -1,4 +1,5 @@
 <template>
+<div>
     <div class="event">
         <div class="cal">
             <div class="cal-head">
@@ -16,13 +17,19 @@
             </div>
         </div>
     </div>
+    <social-foot border-top pad-top margin-top></social-foot>
+</div>
 </template>
 
 <script>
+import socialFoot from '@/components/user/dashboard/social-foot';
 export default {
     name: 'event-post',
     props: {
         post: Object
+    },
+    components: {
+        socialFoot
     },
     computed: {
         date() {

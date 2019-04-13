@@ -10,12 +10,31 @@
                  </div>
             </vue-transmit>
         </div>
+        <div class="form">
+                    <div class="form-row">
+            <div>
+                <header class="label">Title</header>
+                <input type="text" placeholder="Artwork Title" name="" id="" class="input sm">
+            </div>
+        </div>
+        <div class="form-row">
+            <div>
+                <header class="label artist-head"><span>Artist Name</span><span class="check is-artist"  @click="isArtist = !isArtist"><i class="material-icons">{{isArtist ? "check_box" : "check_box_outline_blank"}}</i>I am the artist</span></header>
+                <input type="text" placeholder="name" name="" id="" class="input sm">
+            </div>
+        </div>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Artwork_Uploader'
+    name: 'Artwork_Uploader',
+    data() {
+        return {
+            isArtist: false,
+        }
+    }
 }
 </script>
 
@@ -72,5 +91,31 @@ export default {
         background-color: #F5F7F7;
     }
 
+.form   {
+    margin-top: 24px;
+}
 
+.is-artist {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.artist-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    i {
+        font-size: 16px;
+    }
+    .check {
+        display: flex;
+        align-items: center;
+            font-size: 12px;	font-weight: 600;	letter-spacing: 0.5px;	line-height: 16px;
+            text-transform: none;
+            i {
+                margin-right: 6px;
+            }
+    }
+}
 </style>

@@ -6,6 +6,7 @@
     <auth-modal />
     <subscription-modal />
     <onboarding-modal />
+    <onboarding-story-modal></onboarding-story-modal>
     <user-cart />
     <art-buy-footer></art-buy-footer>
   </div>
@@ -17,6 +18,7 @@ import productModal from "@/components/product/modal/modal";
 import authModal from '@/components/auth/auth-modal'
 import subscriptionModal from '@/components/subscription/modal'
 import onboardingModal from '@/components/onboarding/modal'
+import onboardingStoryModal from '@/components/onboarding/story/storyModal'
 import userCart from '@/components/cart/cart'
 import artBuyFooter from '@/components/footer'
 export default {
@@ -28,7 +30,8 @@ export default {
     subscriptionModal,
     onboardingModal,
     userCart,
-    artBuyFooter
+    artBuyFooter,
+    onboardingStoryModal
   },
   computed: {
     flyoutOpen() {

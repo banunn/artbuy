@@ -2,18 +2,6 @@
     <div class="listing-detail form">
         <div class="form-row">
             <div>
-                <header class="label">Title</header>
-                <input type="text" placeholder="Artwork Title" name="" id="" class="input sm">
-            </div>
-        </div>
-        <div class="form-row">
-            <div>
-                <header class="label">Artist Name</header>
-                <input type="text" placeholder="name" name="" id="" class="input sm">
-            </div>
-        </div>
-        <div class="form-row">
-            <div>
                 <header class="label">Category</header>
                 <select class="select" name="" id="">
                     <option value="contemporary">comtemporary</option>

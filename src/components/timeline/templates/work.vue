@@ -2,24 +2,20 @@
     <div class="post-body">
         <figure class="post-img">
             <img :src="post.content.photoUrl" alt="">
-            <footer class="work-meta">
-                <div class="cta">
-                    <button class="btn-primary"><i class="material-icons">thumb_up</i><span>Appreciate</span></button>
-                </div>
-                <div class="social">
-                    <button class="social-action"><i class="material-icons">thumb_up</i><span>{{post.social.likes}}</span></button>
-                    <button class="social-action"><i class="material-icons">mode_comment</i><span>{{post.social.comments}}</span></button>
-                </div>
-            </footer>
+            <social-foot border-top pad-top margin-top></social-foot>
         </figure>
     </div>
 </template>
 
 <script>
+import socialFoot from '@/components/user/dashboard/social-foot';
 export default {
     name: 'work-post',
     props: {
         post: Object
+    },
+    components: {
+        socialFoot
     }
 }
 </script>

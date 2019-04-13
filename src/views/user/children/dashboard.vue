@@ -1,20 +1,20 @@
 <template>
         <div class="dashboard-wrap">
             <div class="main">
+                <post-input></post-input>
                 <art-post v-for="(p, index) in posts" :key="index" :post="p"></art-post>
             </div>
             <aside class="sidebar">
                 <recent-followers></recent-followers>
-               <art-sales></art-sales>
             </aside>
         </div>
 </template>
 
 <script>
-import artSales from '@/components/user/listings/sales-widget'
-import recentFollowers from '@/components/user/dashboard/followers-widget/widget'
-import artPost from '@/components/timeline/post'
-import postsData from '@/assets/data/posts'
+import recentFollowers from '@/components/user/dashboard/followers-widget/widget';
+import artPost from '@/components/timeline/post';
+import postsData from '@/assets/data/posts';
+import postInput from '@/components/user/dashboard/feed-input';
 export default {
     name: 'User_Dashboard',
     data() {
@@ -23,9 +23,9 @@ export default {
         }
     },
     components: {
-        artSales,
         recentFollowers,
-        artPost
+        artPost,
+        postInput
     }
 }
 </script>

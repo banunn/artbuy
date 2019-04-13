@@ -1,6 +1,6 @@
 <template>
     <div class="follower-item">
-        <figure class="img">
+        <figure class="user-img">
             <img :src="follower.photoUrl" alt="">
         </figure>
         <div class="detail">
@@ -27,6 +27,9 @@ export default {
             margin-right: 8px;
             overflow: hidden;
             border-radius: 50%;
+        }
+        .user-img {
+            margin-right: 10px;
         }
     }
 

@@ -8,9 +8,6 @@
                 :show-remove-button="!editImgState.disabled">
                  <img :src="user.photoUrl" slot="initial">
             </croppa>
-            <span class="user-type">
-                {{user.userType}}
-            </span>
             <div v-if="editImgState.disabled" @click="editUserImg" class="edit btn">
                 <i class="material-icons">camera_alt</i><span>Edit</span>
             </div>
@@ -31,17 +28,20 @@
                 </header>
             </div>
         </div>
-        <div class="social">
-            <div class="social-item">
-                <div class="desc">
-                    <i class="material-icons">group</i>
-                    <span>Followers</span>
-                </div>
-                <div class="data">
-                    <span>{{user.social.followers}}</span>
-                </div>
+        <div class="video">
+            <h4>Video</h4>
+            <video width="282" height="167" :poster="video.thumb" controls>
+                <source :src="video.sources[0]" type="video/mp4">
+                <!-- include fallback sources as needed <source src="movie.ogg" type="video/ogg"> -->
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-detail">
+                <h4>{{video.title}}</h4>
+                <span>{{video.subtitle}}</span>
             </div>
-            <div class="social-item">
+        </div>
+        <div class="social">
+            <div @click="$router.push({name: 'userSocial'});" class="social-item">
                 <div class="desc">
                     <i class="material-icons">person</i>
                     <span>Following</span>
@@ -52,13 +52,22 @@
             </div>
             <div class="social-item">
                 <div class="desc">
+                    <i class="material-icons">group</i>
+                    <span>Followers</span>
+                </div>
+                <div class="data">
+                    <span>{{user.social.followers}}</span>
+                </div>
+            </div>
+            <!-- <div class="social-item">
+                <div class="desc">
                     <i class="material-icons">thumb_up</i>
                     <span>Appreciations</span>
                 </div>
                 <div class="data">
                     <span>{{user.social.appreciations}}</span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </aside>
 </template>
@@ -73,7 +82,14 @@ export default {
             editImgState: {
                 disabled: true
             },
-            isMyProfile: true
+            isMyProfile: true,
+            video: { 
+                "description" : "Big Buck Bunny tells the story of a giant rabbit with a heart bigger than himself. When one sunny day three rodents rudely harass him, something snaps... and the rabbit ain't no bunny anymore! In the typical cartoon tradition he prepares the nasty rodents a comical revenge.\n\nLicensed under the Creative Commons Attribution license\nhttp://www.bigbuckbunny.org",
+                "sources" : [ "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" ],
+                "subtitle" : "Uploaded on February 1, 2019",
+                "thumb" : "https://images.unsplash.com/photo-1551076192-487813ceb8dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=450&q=80",
+                "title" : "Ellie Figueroa 2019 Art Reel"
+            }
         }
     },
     computed: {
@@ -231,6 +247,34 @@ export default {
                     }
                 }
             }
+        }
+    }
+
+.video {
+    overflow: hidden;
+}
+    video {
+        object-fit: cover;
+        max-width: 282px;
+    }
+
+    .video-detail {
+        padding: 8px 12px;
+        background-color: #fafafa;
+        border-right: 1px solid rgba(#000, .1);
+        border-bottom: 1px solid rgba(#000, .1);
+        border-left: 1px solid rgba(#000, .1);
+        margin-bottom: 48px;
+        h4 {
+            margin:0;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        span {
+            font-size: 12px;
+            color: rgba(#000, .4);
+            font-weight: 600;
         }
     }
 </style>

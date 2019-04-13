@@ -50,11 +50,30 @@ export default [
     component: () => import('../views/user/user.vue'),
     children: [
       {
+        path: 'favorites',
+        name: 'favorites',
+        meta: {
+          hasNav: true,
+          displayName: 'favorites'
+        },
+        component: () => import('../views/user/children/favorites/favorites')
+      },
+      {
+        path: 'social',
+        name: 'userSocial',
+        meta: {
+          hasNav: true,
+          displayName: 'social',
+          hideLink: true
+        },
+        component: () => import('../views/user/children/social/social')
+      },
+      {
         path: 'dashboard',
         name: 'user dashboard',
         meta: {
           hasNav: true,
-          displayName: 'dashboard'
+          displayName: 'feed'
         },
         component: () => import('../views/user/children/dashboard')
       },
@@ -64,7 +83,7 @@ export default [
         redirect: { name: 'view user listings' },
         meta: {
           hasNav: true,
-          displayName: 'listings'
+          displayName: 'artwork'
         },
         component: () => import('../views/user/children/listings'),
         children: [
@@ -115,6 +134,15 @@ export default [
         ]
       },
       {
+        path: 'order-history',
+        name: 'order history',
+        meta: {
+          hasNav: true,
+          displayName: 'order history'
+        },
+        component: () => import('../views/user/children/order-history')
+      },
+    /*  {
         path: 'virtual-collection',
         name: 'user collection',
         meta: {
@@ -122,7 +150,7 @@ export default [
           displayName: 'virtual collection'
         },
         component: () => import('../views/user/children/virtual-collection')
-      },
+      }, */
       {
         path: 'account-settings',
         name: 'user account settings',
@@ -132,6 +160,35 @@ export default [
         },
         component: () => import('../views/user/children/account-settings')
       }
+    ]
+  },
+  {
+    path: '/event/:id',
+    name: 'event',
+    redirect: '/event/:id/discussion',
+    meta: {
+      hasNav: true
+    },
+    component: () => import('../views/event.vue'),
+    children: [
+      {
+        path: 'discussion',
+        name: 'event discussion',
+        meta: {
+          hasNav: true,
+          displayName: 'Discussion'
+        },
+        component: () => import('../components/event/discussion')
+      },
+      {
+        path: 'photos',
+        name: 'event photos',
+        meta: {
+          hasNav: true,
+          displayName: 'Photos'
+        },
+        component: () => import('../components/event/event-photos')
+      },
     ]
   },
   {

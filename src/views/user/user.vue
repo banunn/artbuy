@@ -3,9 +3,11 @@
         <user-sidebar></user-sidebar>
         <div class="user-page-content">
             <user-navbar></user-navbar>
+            <div class="page-content">
              <transition name="fade" mode="out-in" appear>
                 <router-view></router-view>
              </transition>
+            </div>
         </div>
     </div>
 </template>
@@ -25,15 +27,17 @@ export default {
 <style lang="scss" scoped>
 .user-page {
     background: #F5F7F7;
-    min-height: calc(100vh - 64px);
     display: flex;
     
     .user-page-content {
         background: #F5F7F7;
         flex:1;
-        padding: 48px 72px;
-        max-height: calc(100vh - 64px);
+        max-height: calc(100vh - 95px);
         overflow-y:auto;
+    }
+
+    .page-content {
+        padding: 40px 72px;
     }
 }
 </style>

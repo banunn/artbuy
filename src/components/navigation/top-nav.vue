@@ -2,8 +2,12 @@
     <div class="top-nav">
         <router-link to="/">
             <img class="logo" src="../../assets/artbuy_logo_white.svg" alt="">
-            <span>Find Art, Buy Art, Sell Art</span>
         </router-link>
+        <div class="btns">
+            <button @click="onboarding(1)" class="nav-btn">Find Art</button>
+            <button @click="onboarding(2)" class="nav-btn">Buy Art</button>
+            <button @click="onboarding(3)" class="nav-btn">Sell Art</button>
+        </div>
         <nav-tools></nav-tools>
     </div>
 </template>
@@ -14,6 +18,11 @@ export default {
     name: 'top_navigation',
     components: {
         navTools
+    },
+    methods: {
+        onboarding(page) {
+            this.$store.commit('openStoryOnboarding', page);
+        }
     }
 }
 </script>
@@ -41,5 +50,32 @@ export default {
     }
     .logo {
         max-width: 100px;
+    }
+
+    .btns {
+        display: flex;
+        flex:1;
+        justify-content: center;
+        padding-left: 0px;
+        @media(max-width: 800px) {
+            display: none; 
+        }
+        .nav-btn {
+            border: 2px solid #fff;
+            background: transparent;
+            border-radius: 2px;
+            text-transform: uppercase;
+            font-size: 9px;
+            font-weight: 400;
+            color: #fff;
+            margin-right: 12px;
+            width: 100px;
+            height: 24px;
+            justify-content: center;
+            align-items: center;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
 </style>

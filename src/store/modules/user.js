@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import router from '@/router/router'
 
+import followerList from '@/assets/data/followers';
 export default {
     state: { 
         userInfo: {
@@ -18,7 +19,8 @@ export default {
             social: {
                 followers: 1923,
                 following: 842,
-                appreciations: 3029
+                appreciations: 3029,
+                followerList: followerList
             }
         },
         auth: {

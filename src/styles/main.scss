@@ -3,4 +3,9 @@
 @import './forms';
 @import './general';
 @import './helpers';
-@import './widgets'
+@import './widgets';
+
+:root {
+    --phone: 800px;
+    --tablet: 1024px;
+} 

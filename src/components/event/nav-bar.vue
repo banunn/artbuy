@@ -24,7 +24,7 @@ export default {
         navRoutes() {
             const vm = this;
             var userRoutes = _.find(vm.routes, function(i) {
-                return i.name == 'user'
+                return i.name == 'event'
             });
             return userRoutes ? userRoutes : [];
         },

@@ -4,11 +4,8 @@
             <img :src="listing.photoUrl" alt="">
         </figure>
         <span class="detail title">{{listing.name}}</span>
-        <span class="detail">{{listing.artist}}</span>
         <span class="detail">{{listing.date}}</span>
         <span class="detail">{{listing.price}}</span>
-        <span class="detail">{{listing.appreciations}}</span>
-        <span class="detail">{{listing.comments}}</span>
         <span class="detail">{{listing.status}}</span>
         <button @click="remove" title="remove event" class="icon-btn delete-btn"><i class="material-icons">delete</i></button>
 

@@ -1,33 +1,43 @@
 <template>
-    <div class="listing-grid">
-        <header class="super-head">
-            <div class="nav">
-                <button :class="{'selected' : v.selected}" class="nav-item" v-for="(v, index) in views" :key="index">
-                    <span>{{v.name}}</span>
-                </button>
+
+<div class="listing-wrap">
+        <div class="main">
+            <div class="listing-grid">
+                <header class="super-head">
+                    <div class="nav">
+                        <button :class="{'selected' : v.selected}" class="nav-item" v-for="(v, index) in views" :key="index">
+                            <span>{{v.name}}</span>
+                        </button>
+                    </div>
+                    <div class="ctrl">
+                        <button @click="$router.push({name: 'create listing'})" class="btn btn-dark">Add Artwork</button>
+                    </div>
+                </header>
+                <div class="table-head">
+                    <div class="heading"></div>
+                    <div v-for="(h, index) in headers" class="heading" :key="index">
+                        <span>{{h}}</span>
+                        <i v-if="h === 'status'" class="material-icons">arrow_drop_down</i></div>
+                </div>
+                <div class="table-body">
+                    <listing v-on:remove="removeListing(l)" v-for="(l, index) in listings" :key="index" :listing="l"></listing>
+                </div>
             </div>
-            <div class="ctrl">
-                <button @click="$router.push({name: 'create listing'})" class="btn btn-dark">New Listing</button>
-            </div>
-        </header>
-        <div class="table-head">
-            <div class="heading"></div>
-            <div v-for="(h, index) in headers" class="heading" :key="index">
-                <span>{{h}}</span>
-                <i v-if="h === 'status'" class="material-icons">arrow_drop_down</i></div>
         </div>
-        <div class="table-body">
-            <listing v-on:remove="removeListing(l)" v-for="(l, index) in listings" :key="index" :listing="l"></listing>
-        </div>
-    </div>
+        <aside class="sidebar">
+            <art-sales></art-sales>
+        </aside>
+</div>
 </template>
 
 <script>
+import artSales from '@/components/user/listings/sales-widget';
 import listing from './listing-item'
 export default {
     name: 'listing-grid',
     components: { 
-        listing
+        listing,
+        artSales,
     },
     data() {
         return {
@@ -48,11 +58,8 @@ export default {
             sortBy: '',
             headers: [
                 'title',
-                'artist',
                 'date added',
                 'price',
-                'likes',
-                'comments',
                 'status'
             ],
             listings: [
@@ -118,6 +125,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+    .listing-wrap {
+        max-width: 965px;
+        display: flex;
+        .main {
+            flex:1;
+        }
+        .sidebar {
+            flex: 332px 0 0;
+            margin-left: 32px;
+        }
+    }
 .listing-grid {
     background-color: #FFFFFF;
     border-radius: 2px;

@@ -7,7 +7,6 @@
             <payment-methods-preview></payment-methods-preview>
         </main>
         <aside class="sidebar">
-            <custom-url />
             <manage-password></manage-password>
             <order-history></order-history>
         </aside>

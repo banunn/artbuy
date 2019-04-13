@@ -12,9 +12,13 @@
             <div class="ctrl">
                 <button class="icon-btn">
                     <i class="material-icons">remove_red_eye</i>
-                    <span>View Public Listing</span>
+                    <span>View Public Artwork Page</span>
                 </button>
                 <button class="icon-btn">
+                    <i class="material-icons">cancel</i>
+                    <span>Hide From Public Search</span>
+                </button>
+                <button class="icon-btn low-op">
                     <i class="material-icons">delete</i>
                     <span>Delete</span>
                 </button>
@@ -27,7 +31,7 @@
             </div>
             <aside class="sidebar">
                 <listing-ship></listing-ship>
-                <listing-status></listing-status>
+                <customer-widget></customer-widget>
             </aside>
         </div>
     </div>
@@ -37,14 +41,16 @@
 import listingShip from '@/components/user/listings/listing-ship'
 import listingStatus from '@/components/user/listings/listing-status'
 import listingForm from '@/components/user/listings/listing-details'
-import artUploader from '@/components/user/listings/artwork'
+import artUploader from '@/components/user/listings/artwork';
+import customerWidget from '@/components/user/listings/customer-widget';
 export default {
     name: 'create_listing',
     components: {
         listingStatus,
         listingForm,
         artUploader,
-        listingShip
+        listingShip,
+        customerWidget
     }
 
 }
@@ -112,8 +118,15 @@ export default {
                 &:hover {
                     opacity: 1;
                 }
+                &.low-op {
+                    opacity: .3;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
         }
     }
+
 </style>
 
 
