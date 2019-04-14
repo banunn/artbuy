@@ -1,7 +1,7 @@
 <template>
     <nav class="user-nav">
         <router-link 
-            v-if="!r.meta.hideLink == true"
+            v-show="!r.meta.hideLink == true"
             class="nav-link"
             v-for="(r, index) in navRoutes.children" 
             :key="index" 

@@ -4,7 +4,7 @@
             <art-follower v-for="(f, index) in followers" :key="index" :follower="f"></art-follower>
         </template>
         <template slot="footer">
-            <button class=" btn btn-txt icon-btn">View All Followers <i class="material-icons">chevron_right</i></button> 
+            <button @click="$router.push({name: 'userSocial'})" class=" btn btn-txt icon-btn">View All Followers <i class="material-icons">chevron_right</i></button> 
         </template>
     </art-widget>
 </template>
