@@ -56,14 +56,20 @@
         </div>
         <footer class="foot">
             <button class="btn btn-light">Remove</button>
-            <button class="btn btn-dark">Update Payment Method</button>
+            <button @click="openModal" class="btn btn-dark">Update Payment Method</button>
         </footer>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'user_payment_method'
+    name: 'user_payment_method',
+    methods: {
+        openModal() {
+            console.log('hello');
+            this.$store.dispatch('openPaymentModal');
+        }
+    }
 }
 </script>
 

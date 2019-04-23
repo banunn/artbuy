@@ -4,7 +4,7 @@
             <user-detail></user-detail>
             <subscription-non-member></subscription-non-member>
             <subscription></subscription>
-            <payment-methods-preview></payment-methods-preview>
+            <payment-methods></payment-methods>
         </main>
         <aside class="sidebar">
             <manage-password></manage-password>
@@ -17,7 +17,7 @@
 import customUrl from '@/components/user/account-settings/custom-url'
 import managePassword from '@/components/user/account-settings/manage-password'
 import orderHistory from '@/components/user/account-settings/order-history'
-import paymentMethodsPreview from '@/components/user/account-settings/payment-methods-preview'
+import paymentMethods from '@/components/user/payment/w-payment-methods/payment-widget'
 import subscription from '@/components/user/account-settings/subscription'
 import subscriptionNonMember from '@/components/user/account-settings/subscription-non-member'
 import userDetail from '@/components/user/account-settings/user-detail'
@@ -27,7 +27,7 @@ export default {
         customUrl,
         managePassword,
         orderHistory,
-        paymentMethodsPreview,
+        paymentMethods,
         subscription,
         userDetail,
         subscriptionNonMember

@@ -8,6 +8,7 @@ import user from './modules/user'
 import subscription from './modules/subscription'
 import onboarding from './modules/onboarding'
 import cart from './modules/cart'
+import paymentMethods from './modules/payment-methods'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -17,7 +18,8 @@ export default new Vuex.Store({
     user,
     subscription,
     onboarding,
-    cart
+    cart,
+    paymentMethods
   },
   state: {
     
