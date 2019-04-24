@@ -11,7 +11,7 @@
             </header>
             <span class="exp">Expires: 01/28</span>
         </div>
-        <div class="ctrl"><i @click="openModal" class="material-icons">edit</i></div>
+        <div class="ctrl"><i v-if="editable != false" @click="openModal" class="material-icons">edit</i></div>
     </div>
 </template>
 
@@ -24,7 +24,8 @@ export default {
         Cleave
     },
     props: {
-        method: Object
+        method: Object,
+        editable: Boolean
     },
     methods: {
         openModal() {

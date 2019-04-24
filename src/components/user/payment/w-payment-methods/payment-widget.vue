@@ -1,7 +1,7 @@
 <template>
     <ab-widget :title="'Payment Methods'">
         <template slot="body">
-            <p-method v-for="(m, index) in methods" :method="m" :key="index"></p-method>
+            <p-method v-for="(m, index) in methods" :method="m" :key="index" :editable="true"></p-method>
             <div @click="openModal" class="foot">
                 <div class="icon"><i class="material-icons">credit_card</i></div>
                 <div class="detail">

@@ -10,7 +10,7 @@
         </div>
         <footer class="foot">
             <button @click="close" class="btn btn-light">Cancel</button>
-            <button class="btn btn-dark">Save</button>
+            <button class="btn btn-dark">{{modal.type == 'edit' ? 'Update Payment Method' : 'Add Payment Method'}}</button>
         </footer>
       </div>
     </div>
@@ -19,10 +19,12 @@
 
 <script>
 import methodForm from '@/components/user/payment/payment-method-form'
+import pMethod from '@/components/user/payment/w-payment-methods/payment-item';
 export default {
-  name: "onboarding_modal",
+  name: "payment_method_modal",
   components: {
-      methodForm
+      methodForm,
+      pMethod
   },
   computed: {
     modal() {
@@ -30,6 +32,9 @@ export default {
     },
     method() {
         return this.$store.getters.paymentModal.method;
+    },
+    methods() {
+        return this.$store.getters.userPaymentMethods;
     }
   },
   methods: {
@@ -106,7 +111,7 @@ export default {
             line-height: 12px;
             background: none;
             margin-left: 10px;
-            width: 105px;
+            min-width: 105px;
             &.btn-dark {
                 background-color: #111215;
                 color: #fff;

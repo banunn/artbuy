@@ -9,6 +9,7 @@ import subscription from './modules/subscription'
 import onboarding from './modules/onboarding'
 import cart from './modules/cart'
 import paymentMethods from './modules/payment-methods'
+import donationModal from './modules/donations'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -19,7 +20,8 @@ export default new Vuex.Store({
     subscription,
     onboarding,
     cart,
-    paymentMethods
+    paymentMethods,
+    donationModal
   },
   state: {
     

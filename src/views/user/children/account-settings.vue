@@ -9,6 +9,8 @@
         <aside class="sidebar">
             <manage-password></manage-password>
             <order-history></order-history>
+            <video-link></video-link>
+            <artist-donate></artist-donate>
         </aside>
     </div>
 </template>
@@ -21,6 +23,8 @@ import paymentMethods from '@/components/user/payment/w-payment-methods/payment-
 import subscription from '@/components/user/account-settings/subscription'
 import subscriptionNonMember from '@/components/user/account-settings/subscription-non-member'
 import userDetail from '@/components/user/account-settings/user-detail'
+import artistDonate from '@/components/user/account-settings/donate-widget'
+import videoLink from '@/components/user/account-settings/video-link-widget'
 export default {
     name: 'account-settings',
     components: {
@@ -30,7 +34,9 @@ export default {
         paymentMethods,
         subscription,
         userDetail,
-        subscriptionNonMember
+        subscriptionNonMember,
+        artistDonate,
+        videoLink
     }
 }
 </script>
