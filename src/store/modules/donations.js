@@ -9,6 +9,10 @@ export default {
             open: false,
             title: ''
         },
+        artistDonationModal: {
+            open: false,
+            title: ''
+        }
     },
     mutations: {
         openDonationModal(state, pl) {
@@ -16,6 +20,12 @@ export default {
         },
         closeDonationModal(state) {
             state.donationModal.open = false;
+        },
+        openArtistDonationModal(state, pl) {
+            state.artistDonationModal.open = true;
+        },
+        closeArtistDonationModal(state) {
+            state.artistDonationModal.open = false;
         },
 
     },
@@ -33,11 +43,28 @@ export default {
                     commit('closeDonationModal')
                 );
             });
+        },
+        openArtistDonationModal({getters, state, commit}, method) {
+            return new Promise(function(resolve, reject) {
+                resolve(
+                    commit('openArtistDonationModal', method)
+                );
+            });
+        },
+        closeArtistDonationModal({getters, state, commit}) {
+            return new Promise(function(resolve, reject) {
+                resolve(
+                    commit('closeArtistDonationModal')
+                );
+            });
         }
     },
     getters: {
         donationModal(state) {
             return state.donationModal;
         },
+        artistDonationModal(state) {
+            return state.artistDonationModal;
+        }
     }
 }

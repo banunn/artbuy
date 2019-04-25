@@ -7,23 +7,23 @@ export default {
         subscriptions: [
             {
                 id: 1,
-                name: 'FREEMIUM',
-                benefits: ["Unlimited Users", "Unlimited Listings per Month", "Unlimited Event Creation", "35% commission fee"],
-                price: '0',
+                name: 'INDIVIDUAL',
+                benefits: ["Single User", "10 Listings per Month", "Unlimited Event Creation", "2.9% Transaction Fee"],
+                price: '29',
                 frequency: 'month'
             },
             {
                 id: 2,
-                name: 'BASIC',
-                benefits: ["Unlimited Users", "Unlimited Listings per Month", "Unlimited Event Creation", "25% commission fee"],
-                price: '9.95',
+                name: 'TEAM',
+                benefits: ["Single User", "10 Listings per Month", "Unlimited Event Creation", "2.9% Transaction Fee"],
+                price: '79',
                 frequency: 'month'
             },
             {
                 id: 3,
-                name: 'PREMIUM',
-                benefits: ["Unlimited Users", "Unlimited Listings per Month", "Unlimited Event Creation", "15% commission fee"],
-                price: '49.96',
+                name: 'ENTERPRISE',
+                benefits: ["Single User", "10 Listings per Month", "Unlimited Event Creation", "1.49% Transaction Fee"],
+                price: '199',
                 frequency: 'month' 
             }
         ],

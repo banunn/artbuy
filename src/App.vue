@@ -9,6 +9,7 @@
     <onboarding-story-modal></onboarding-story-modal>
     <user-cart />
     <donation-modal></donation-modal>
+    <artist-donation-modal></artist-donation-modal>
     <payment-method-modal></payment-method-modal>
     <art-buy-footer></art-buy-footer>
   </div>
@@ -25,6 +26,7 @@ import userCart from '@/components/cart/cart'
 import artBuyFooter from '@/components/footer'
 import paymentMethodModal from '@/components/user/payment/method-modal'
 import donationModal from '@/components/user/donations/donation-modal'
+import artistDonationModal from '@/components/artist/donations/donation-modal'
 export default {
   name: "main-app",
   components: {
@@ -37,7 +39,8 @@ export default {
     artBuyFooter,
     onboardingStoryModal,
     paymentMethodModal,
-    donationModal
+    donationModal,
+    artistDonationModal
   },
   computed: {
     flyoutOpen() {

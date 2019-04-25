@@ -2,7 +2,7 @@
     <aside v-if="product" class="sidebar">
         <header class="head">
             <div class="meta">
-                <aside @click="goToUserProfile" class="user-icon"><img :src="product.author.photoUrl" alt=""></aside>
+                <aside @click="goToArtistProfile" class="user-icon"><img :src="product.author.photoUrl" alt=""></aside>
                 <div class="meta-detail">
                     <h3>{{product.author.name}}</h3>
                     <span><i class="material-icons">location_on</i> {{product.author.location.city + ', ' + product.author.location.state}}</span>
@@ -54,11 +54,11 @@ export default {
           var item = this.product;
           this.$store.dispatch('addItemToCart', item);
       },
-      goToUserProfile() {
+      goToArtistProfile() {
           const vm = this;
         var uid = this.product.author.id;
         vm.$store.dispatch('closeProductPreview').then(function() {
-             vm.$router.push({name: 'user dashboard', params: {id: uid}});
+             vm.$router.push({name: 'artist', params: {id: uid}});
         })
       },
     },

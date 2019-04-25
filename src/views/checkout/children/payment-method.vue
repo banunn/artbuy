@@ -1,60 +1,21 @@
 <template>
     <div class="payment-method">
-                <div class="payment-form form">
-            <header class="label">Card Number</header>
-        <div class="form-row">
-            <input type="number" class="input">
-        </div>
-        <div class="form-row flex">
-            <div>
-                <header class="label">Expiration</header>
-                <input type="date" class="input" placeholder="12/20">
+        <div class="payments">
+            <div class="methods">
+                <div @click="selected = m" v-for="(m, index) in methods" :key="index" class="method">
+                    <div class="m-icon">
+                        <i class="material-icons">{{selected == m ? 'radio_button_checked' : 'radio_button_unchecked'}}</i>
+                    </div>
+                    <p-method :method="m" :editable="false"></p-method>
+                </div>
+                <div @click="openModal" class="foot">
+                    <div class="icon"><i class="material-icons">credit_card</i></div>
+                    <div class="detail">
+                        <header class="head">Add New Payment Method</header>
+                    </div>
+                    <div class="ctrl"><i class="material-icons">keyboard_arrow_right</i></div>
+                </div>
             </div>
-            <div>
-                <header class="label">CVV</header>
-                <input type="number" class="input" placeholder="cvv">
-            </div>
-        </div>
-        <div class="form-row flex">
-            <div>
-                <header class="label">First Name On Card</header>
-                <input type="text" class="input" name="" id="">
-            </div>
-            <div>
-                <header class="label">Last Name On Card</header>
-                <input type="text" class="input" name="" id="">
-            </div>
-        </div>
-        <div class="form-row">
-            <header class="label">
-                Billing Street Address
-            </header>
-            <input type="text" placeholder="1111 E. 22nd St" class="input">
-        </div>
-        <div class="form-row flex">
-            <div>
-                <header class="label">City</header>
-                <input type="text" class="input" name="" id="">
-            </div>
-            <div>
-                <header class="label">Postal / Zip Code</header>
-                <input type="text" class="input" name="" id="">
-            </div>
-        </div>
-        <div class="form-row flex">
-            <div>
-                <header class="label">Country</header>
-                <select class="select">
-                    <option value="United States">United States</option>
-                </select>
-            </div>
-            <div>
-                <header class="label">State</header>
-                <select class="select">
-                    <option value="California">California</option>
-                </select>
-            </div>
-        </div>
         </div>
         <div class="checkout-foot">
             <button @click="$router.push('/')" class="btn text-btn"><i class="material-icons">chevron_left</i> Continue Shopping</button>
@@ -64,8 +25,27 @@
 </template>
 
 <script>
+import pMethod from '@/components/user/payment/w-payment-methods/payment-item';
 export default {
-    name: 'payment_method'
+    name: 'payment_method',
+    components: {
+        pMethod
+    },
+    data() {
+        return {
+            selected: null
+        }
+    },
+    computed: {
+        methods() {
+            return this.$store.getters.userPaymentMethods;
+        }
+    },
+    methods: {
+        openModal() {
+            this.$store.dispatch('openPaymentModal');
+        }
+    }
 }
 </script>
 
@@ -113,5 +93,47 @@ export default {
       text-transform: uppercase;
     }
   }
+}
+
+
+.payments {
+    border: 1px solid rgba(#000, .1);
+    .foot {
+    display: flex;
+    padding: 16px 14px 16px 14px;
+    align-items: center;
+            .icon {
+            width: 42px;
+            height: 100%;
+            margin-right: 24px;
+        }
+
+        .head {
+    	font-size: 13px;	font-weight: 900;	letter-spacing: 0.54px;	line-height: 18px;
+        }
+            .ctrl {
+        flex:1;
+        justify-content: flex-end;
+        text-align: right;
+        i {
+            font-size: 24px;
+            color: #B8B8B9;
+            cursor: pointer;
+            transform: translateX(8px);
+        }
+    }
+}
+
+.method {
+    display: flex;
+    align-items: center;
+    margin: 0 0px;
+    padding: 0 14px;
+    border-bottom: 1px solid rgba(#000, .1);
+    cursor: pointer;
+    &:last-child {
+        border-bottom:none;
+    }
+}
 }
 </style>

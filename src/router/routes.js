@@ -39,6 +39,29 @@ export default [
     component: () => import('../views/Product.vue')
   },
   {
+    path: '/artist/:id',
+    name: 'artist',
+    redirect: { name: 'artist-gallery' },
+    meta: {
+      hasNav: true
+    },
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import('../views/artist/artist.vue'),
+    children: [
+      {
+        path: 'gallery',
+        name: 'artist-gallery',
+        meta: {
+          hasNav: true,
+          displayName: 'gallery'
+        },
+        component: () => import('../views/artist/children/gallery')
+      },
+    ]
+  },
+  {
     path: '/user/:id',
     name: 'user',
     meta: {
