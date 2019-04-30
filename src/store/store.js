@@ -10,6 +10,7 @@ import onboarding from './modules/onboarding'
 import cart from './modules/cart'
 import paymentMethods from './modules/payment-methods'
 import donationModal from './modules/donations'
+import favoritesModal from './modules/favorites' 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -21,7 +22,8 @@ export default new Vuex.Store({
     onboarding,
     cart,
     paymentMethods,
-    donationModal
+    donationModal,
+    favoritesModal
   },
   state: {
     

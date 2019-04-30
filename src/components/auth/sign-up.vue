@@ -3,10 +3,10 @@
         <button @click="close" class="icon-btn close"><i class="material-icons">clear</i></button>
         <div class="form">
             <header>
-                <img src="@/assets/artbuy_logo.svg" alt="">
+                <img src="@/assets/logo-stamp.png" alt="">
             </header>
             <div class="form-content">
-                <h1>Join ArtBuy</h1>
+                <h1>SIGN UP</h1>
                 <input type="email" placeholder="you@email.com">
                 <input type="password" placeholder="password">
                 <input type="password" placeholder="confirm password">
@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .form {
     .form-content {
-        margin-top: 56px;
+        margin-top: 24px;
         h1 {
             text-align: center;
         }
@@ -60,7 +60,7 @@ export default {
     header {
         text-align: center;
         img {
-            max-width: 85px;
+            max-width: 56px;
             height: auto;
             display: inline;
         }

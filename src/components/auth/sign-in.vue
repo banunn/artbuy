@@ -3,10 +3,10 @@
         <button @click="close" class="icon-btn close"><i class="material-icons">clear</i></button>
         <div class="form">
             <header>
-                <img src="@/assets/artbuy_logo.svg" alt="">
+                <img class="logo" src="@/assets/logo-stamp.png" alt="">
             </header>
             <div class="form-content">
-                <h1>Welcome back!</h1>
+                <h1>Sign In</h1>
                 <input type="email" placeholder="you@email.com">
                 <input type="password" placeholder="password">
                 <section class="forgot">
@@ -14,7 +14,7 @@
                 </section>
                 <button @click="logIn" class="btn-block-primary">Log In</button>
                 <footer class="form-content-foot">
-                    Already have an account? Sign up <a @click="goToSignUp">here</a>
+                    Don't have an account? Sign up <a @click="goToSignUp">here</a>
                 </footer>
             </div>
             <footer class="foot">
@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .form {
     .form-content {
-        margin-top: 80px;
+        margin-top: 55px;
         h1 {
             text-align: center;
         }
@@ -60,10 +60,13 @@ export default {
     header {
         text-align: center;
         img {
-            max-width: 85px;
+            max-width: 56px;
             height: auto;
             display: inline;
         }
     }
 }
+
+.form-content-foot {}
+
 </style>
