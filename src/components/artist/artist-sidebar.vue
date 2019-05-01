@@ -283,4 +283,28 @@ export default {
             transform: translateY(-1px);
         }
     }
+  // Responsive  
+  @media(max-width: 1000px) {
+ .artist-page {
+   flex-direction: column-reverse;
+ } 
+ .artist-sidebar {
+   width: 100%;
+   max-height: inherit;
+   overflow-y: inherit;
+   text-align: center;
+ }
+ .artist-sidebar .profile-img {
+ margin:  0 auto;
+ }
+ .artist-sidebar .social-item {
+   flex:1;
+   margin-right: 16px
+ }
+ .artist-sidebar .location {
+   justify-content: center
+   
+ }
+}
+
 </style>
