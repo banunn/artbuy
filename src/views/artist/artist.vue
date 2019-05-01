@@ -25,7 +25,11 @@ export default {
 .artist-page {
     background: #F5F7F7;
     display: flex;
-    
+    @media(max-width: 1000px) {
+     .artist-page {
+        flex-direction: column-reverse;
+     } 
+    }
     .artist-page-content {
         background: #F5F7F7;
         flex:1;
