@@ -104,6 +104,8 @@ export default {
         flex: 332px 0 0;
         box-shadow: inset -1px 0 0 0 #E8ECED;
         background: #fff;
+        max-height: calc(100vh - 97px);
+        overflow-y: auto;
         .profile-img {
             background: #eaeaea;
             position: relative;
