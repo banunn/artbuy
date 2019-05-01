@@ -1,5 +1,5 @@
 <template>
-    <div class="item">
+    <div @click="openOrder" class="item">
         <span class="detail title">{{item.order_number}}</span>
         <span class="detail">{{item.date}}</span>
         <span class="detail">{{item.items}}</span>
@@ -14,6 +14,9 @@ export default {
         item: Object
     },
     methods: {
+        openOrder() {
+            return this.$store.dispatch('openOrderHistoryModal');
+        }
     }
 }
 </script>

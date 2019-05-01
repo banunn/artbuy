@@ -23,6 +23,7 @@ components: {
 <style lang="scss" scoped>
 .search {
     border-bottom: 1px solid #E3E7E8;
+    background: #fff;
 }
     .searchWrap {
         display: flex;

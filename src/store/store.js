@@ -11,6 +11,7 @@ import cart from './modules/cart'
 import paymentMethods from './modules/payment-methods'
 import donationModal from './modules/donations'
 import favoritesModal from './modules/favorites' 
+import orderHistoryModal from './modules/orderHistory'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -23,7 +24,8 @@ export default new Vuex.Store({
     cart,
     paymentMethods,
     donationModal,
-    favoritesModal
+    favoritesModal,
+    orderHistoryModal
   },
   state: {
     
