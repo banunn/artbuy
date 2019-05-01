@@ -87,6 +87,8 @@ export default {
   flex: 332px 0 0;
   box-shadow: inset -1px 0 0 0 #e8eced;
   background: #fff;
+  max-height: calc(100vh - 97px);
+  overflow-y: auto;
   .event-img {
     background: #eaeaea;
     position: relative;
