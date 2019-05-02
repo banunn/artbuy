@@ -57,12 +57,18 @@ export default {
     .event-wrap {
         max-width: 965px;
         display: flex;
+        @media(max-width: 1000px) {
+            flex-direction: column;
+        }
         .main {
             flex:1;
         }
         .sidebar {
             flex: 332px 0 0;
             margin-left: 32px;
+            @media(max-width: 1000px) {
+                margin-left: 0;
+            }
         }
     }
 
@@ -72,6 +78,10 @@ export default {
         align-items: flex-end;
         max-width: 965px;
         margin-bottom: 26px;
+        @media(max-width: 1000px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
         .detail {
             nav {
                 i {
@@ -97,6 +107,9 @@ export default {
                 letter-spacing: 0.17px;
                 line-height: 28px;
                 margin-top: 8px;
+                @media(max-width: 1000px) {
+                    margin-bottom: 16px;
+                }
             }
         }
 
@@ -108,6 +121,10 @@ export default {
                 line-height: 12px;
                 text-transform: uppercase;
                 margin-left: 28px;
+                @media(max-width: 1000px) {
+                    margin-left:0px;
+                    padding: 6px 12px;
+                }
                 i {
                     font-size: 18px;
                     margin-right: 6px;

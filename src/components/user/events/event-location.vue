@@ -32,6 +32,9 @@ export default {
         border: 1px solid rgba(17,18,21,0.2);	
         border-radius: 2px;
         margin-top: 8px;
+        @media(max-width: 1000px) {
+            max-width: 100%;
+        }
     }
  }
 </style>

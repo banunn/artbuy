@@ -27,6 +27,10 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	padding: 34px 0 24px 0;
+	@media(max-width: 1000px) {
+		flex-direction: column;
+		padding: 16px 10px;
+	}
 	.filter {
 		display: flex;
 		align-items: center;
@@ -43,6 +47,10 @@ export default {
 			display: block;
 			margin:0;
 			padding:0;
+			@media(max-width: 1000px) {
+				display: flex;
+				flex-direction: column;
+			}
 			li {
 				display: inline-flex;
 				align-items: center;
@@ -54,6 +62,9 @@ export default {
 				padding: 4px 8px;
 				border: 1.5px solid rgba(17,18,21,0.2);	
 				border-radius: 22px; 
+				@media(max-width: 1000px) {
+				margin-bottom: 12px;
+				}
 				i {
 					font-size: 14px;
 					margin-left: 4px;

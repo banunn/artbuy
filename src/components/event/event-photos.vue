@@ -148,4 +148,14 @@ export default {
   height: 100%;
   width: 100%;
 }
+
+@media(max-width: 1000px) {
+     .photo-grid {
+         grid-template-columns: 1fr 1fr !important;
+     }   
+     .photo-grid figure.photo {
+        width: 100% !important;
+    }
+}
+
 </style>

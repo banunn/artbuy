@@ -33,6 +33,14 @@ export default {
         height: 60px;
         border-bottom: 1px solid #E8EAEB;
         position: relative;
+        @media(max-width: 1000px) {
+            height: inherit;
+            padding: 6px 0;
+            flex-direction: column;
+            > .detail {
+                margin-bottom: 6px;
+            }
+        }
         &:hover {
             background-color: #FAFCFC;
         }

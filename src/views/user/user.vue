@@ -40,4 +40,34 @@ export default {
         padding: 40px 72px;
     }
 }
+
+@media(max-width: 1000px) {
+ .user-page {
+    flex-direction: column
+}
+
+aside.user-sidebar {
+    width: 100% !important;
+    justify-content: center;
+    max-height: inherit;
+    overflow-y: hidden;
+    flex: 1;
+    order: 3;
+}   
+.dashboard-wrap {
+    flex-direction: column;
+}
+.page-content {
+    padding: 42px 10px !important;
+}
+aside.sidebar {
+    margin-left: 0px !important;
+    
+}
+.user-page-content {
+    overflow-y: inherit;
+    max-height: inherit !important;
+    
+}
+}
 </style>

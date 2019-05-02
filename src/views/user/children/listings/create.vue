@@ -60,12 +60,18 @@ export default {
     .listing-wrap {
         max-width: 965px;
         display: flex;
+        @media(max-width: 1000px) {
+            flex-direction: column;
+        }
         .main {
             flex:1;
         }
         .sidebar {
             flex: 332px 0 0;
             margin-left: 32px;
+            @media(max-width: 1000px) {
+                margin-left: 0;
+            }
         }
     }
 
@@ -75,7 +81,16 @@ export default {
         align-items: flex-end;
         max-width: 965px;
         margin-bottom: 26px;
+        @media(max-width: 1000px) {
+            flex-direction: column;
+            max-width: 100%;
+            align-items: flex-start;
+        }
         .detail {
+            @media(max-width: 1000px ){
+                flex:1;
+                margin-bottom: 12px;
+            }
             nav {
                 i {
                     font-size: 16px;
@@ -124,6 +139,15 @@ export default {
                         opacity: 1;
                     }
                 }
+        }
+    }
+
+    .ctrl {
+        @media(max-width: 1000px) {
+            .icon-btn {
+                margin-left:0px;
+                padding: 6px 12px;
+            }
         }
     }
 

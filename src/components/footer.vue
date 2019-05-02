@@ -55,7 +55,10 @@ export default {
         color: #fff;
         height: 32px;
         font-size: 10px;
-
+        @media(max-width: 1000px) {
+            position: relative;
+            height: inherit;
+        }
         .copy {
             opacity: .8;
             font-size: 10px;	font-weight: 500;	letter-spacing: 0.83px;	line-height: 24px;

@@ -40,6 +40,9 @@ export default {
         .sidebar {
             flex: 332px 0 0;
             margin-left: 32px;
+            @media(max-width: 1000px) {
+                margin-left: 0px !important; 
+            }
         }
     }
 </style>

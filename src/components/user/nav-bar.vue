@@ -49,6 +49,12 @@ export default {
     align-items: flex-end;
     padding: 0 72px;
     box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.09);
+    @media(max-width: 1000px) {
+        padding: 0 16px;
+        max-width: 100%;
+        overflow-x: auto;
+        padding-right: 56px;
+    }
 }
     .nav-link {
         color: rgba(#111215, .6);
@@ -61,8 +67,14 @@ export default {
         display: inline-flex;
         margin-right: 40px;
         padding-bottom: 12px;
+        @media(max-width: 1000px) { 
+            white-space: nowrap;
+        }
         &:last-child {
             margin-right: 0;
+            @media(max-width: 1000px) { 
+                padding-right: 16px;
+            }
         }
         &.router-link-active {
             color: rgba(#111215, 1);

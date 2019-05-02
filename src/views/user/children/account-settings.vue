@@ -45,12 +45,18 @@ export default {
     .account-settings {
         max-width: 965px;
         display: flex;
+        @media(max-width: 1000px) {
+            flex-direction: column;
+        }
         .main {
             flex:1;
         }
         .sidebar {
             flex: 332px 0 0;
             margin-left: 32px;
+            @media(max-width: 1000px) {
+                margin-left: 0;
+            }
         }
     }
 </style>

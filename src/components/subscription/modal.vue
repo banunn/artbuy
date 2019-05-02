@@ -106,10 +106,22 @@ export default {
     width: 904px;	
     border: 1px solid rgba(17,18,21,0.1);	
     border-radius: 2px;
+    @media(max-width: 1000px) {
+        width: calc(100% - 20px);
+        height: 90%;
+        overflow: hidden;
+    }
 
     .list {
         display: flex;
         padding: 65px 72px;
+        max-height: 87%;
+        overflow-y: auto;
+        @media(max-width: 1000px) {
+            flex-direction: column;
+            overflow-y: auto;
+            padding: 24px 16px;
+        }
         header {
                 color: #FFFFFF;	
                 font-size: 16px;	
@@ -128,6 +140,10 @@ export default {
             background-color: #FFFFFF;	
             overflow: hidden;
             cursor: pointer;
+            @media(max-width: 1000px) {
+                margin-bottom: 24px;
+                width: 100%;
+            }
             &:last-child {
                 margin-right:0;
             }

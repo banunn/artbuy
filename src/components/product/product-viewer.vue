@@ -55,6 +55,9 @@ export default {
         max-height: 100vh;
         overflow-y: auto;
         flex:1;
+        @media(max-width: 1000px) {
+            flex: 2;
+        }
         &.page-content {
             max-height: calc(100vh - 64px);
             padding: 0;

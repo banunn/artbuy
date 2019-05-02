@@ -65,4 +65,28 @@ export default {
             margin-left: 32px;
         }
     }
+@media(max-width: 1000px) {
+.event-page {
+    flex-direction: column;
+}
+.event-wrap {
+    flex-direction: column;
+    padding: 40px 24px !important;
+}
+.event-page-content {
+    flex-direction: column;
+    overflow-y: hidden;
+    max-height: inherit !important;
+}
+aside.event-sidebar {
+    max-height: inherit;
+    overflow: inherit;
+    width: 100%;
+    flex: inherit;
+    order: 1;
+}
+.sidebar {
+    margin-left: 0 !important;
+}    
+}
 </style>

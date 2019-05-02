@@ -146,6 +146,9 @@ export default {
     justify-content: space-between;
     height: 64px;
     align-items: center;
+    @media(max-width: 1000px) {
+      height: inherit;
+    }
     button {
       -webkit-appearance: none;
       background: none;
@@ -167,6 +170,13 @@ export default {
 }
 
 .meta {
+  @media(max-width: 1000px) {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    overflow-y: auto;
+    padding: 16px;
+  }
 }
 
 .filter {
