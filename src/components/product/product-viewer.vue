@@ -8,18 +8,14 @@
         </header>
         <figure class="image" v-viewer>
             <img :src="product.art.photoUrl" alt="">
+            <div class="tools">
+                <button alt="Show Art" class="btn-light">Show Art On Wall</button>
+                <button alt="Full Screen" class="btn-light">View Full Screen</button>
+            </div>
+            
         </figure>
         <footer :class="{'pad-top': !isProductPage}" class="image-meta">
-            <div class="cta">
-                <button class="btn-primary"><i class="material-icons">thumb_up</i><span>Appreciate</span></button>
-                <button class="btn-social"><img src="@/assets/icon-fb.svg" class="social-icon" alt="like on facebook"><span>Share</span></button>
-                <button class="btn-social"><img src="@/assets/icon-tw.svg" class="social-icon" alt="share on twitter"><span>Share</span></button>
-                <button class="btn-social"><img src="@/assets/icon-inst.svg" class="social-icon" alt="share on twitter"><span>Share</span></button>
-            </div>
-            <div class="social">
-                <button class="social-action"><i class="material-icons">thumb_up</i><span>236</span></button>
-                <button class="social-action"><i class="material-icons">mode_comment</i><span>54</span></button>
-            </div>
+            <social-foot></social-foot>
         </footer>
         <div v-if="isProductPage" class="product-page-content">
             <product-meta v-if="product" :product="product"></product-meta>
@@ -31,6 +27,7 @@
 <script>
 import productComments from './comment/product-comments'
 import productMeta from './product-meta'
+import socialFoot from '@/components/user/dashboard/social-foot'
 export default {
     name: 'modal-product-viewer',
     props: {
@@ -38,7 +35,8 @@ export default {
     },
     components: {
         productComments,
-        productMeta
+        productMeta,
+        socialFoot
     },
     computed: {
         isProductPage() {
@@ -88,6 +86,7 @@ export default {
         margin:0;
         padding:0;
         background-color: #F5F7F7;
+        position: relative;
         img {
             width: 100%;
             margin:0;
@@ -158,5 +157,26 @@ export default {
                 }
             }
         }
+    }
+
+    .tools {
+        position: absolute;
+        bottom: 36px;
+        right: 64px;
+    }
+
+    .btn-light {
+        all: unset;
+        cursor: pointer;
+        padding: 4px 10px;
+            font-size: 10px;	font-weight: bold;	letter-spacing: 0.4px;	line-height: 16px;
+            opacity: 0.6;	border-radius: 12px;	background-color: #FFFFFF;
+            margin-right: 12px;
+            &:last-child {
+                margin-right:0;
+            }
+            &:hover {
+                opacity: 1;
+            }
     }
 </style>

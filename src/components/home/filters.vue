@@ -45,6 +45,9 @@
           <f-size v-on-clickaway="closeFilter" v-if="selected == 'size'"></f-size>
         </div>
       </div>
+      <div class="location">
+        <f-location></f-location>
+      </div>
     </header>
   </aside>
 </template>
@@ -56,6 +59,7 @@ import fMedium from "@/components/filters/filter-medium";
 import fPrice from "@/components/filters/filter-price";
 import fSize from "@/components/filters/filter-size";
 import fStyle from "@/components/filters/filter-style";
+import fLocation from '@/components/filters/filter-location'
 import { mixin as clickaway } from 'vue-clickaway';
 
 export default {
@@ -66,7 +70,8 @@ export default {
     fMedium,
     fPrice,
     fSize,
-    fStyle
+    fStyle,
+    fLocation
   },
   mixins: [ clickaway ],
   methods: {
@@ -76,7 +81,6 @@ export default {
         } else {
             return this.selected = filter;
         }
-      
     },
     closeFilter() {
       return this.selected = null;

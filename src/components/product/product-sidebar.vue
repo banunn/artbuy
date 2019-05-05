@@ -1,5 +1,14 @@
 <template>
     <aside v-if="product" class="sidebar">
+        <section class="content">
+            <h5 class="tag genre">Contemporary</h5>
+            <h2 class="title">{{product.art.name}}</h2>
+             <p>Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.</p>
+        </section>
+        <footer class="foot">
+            <span>{{product.art.dimensions}}</span>
+            <h3>{{product.art.price | currency}}</h3>
+        </footer>
         <header class="head">
             <div class="meta">
                 <aside @click="goToArtistProfile" class="user-icon"><img :src="product.author.photoUrl" alt=""></aside>
@@ -10,20 +19,11 @@
             </div>
             <div class="action"><button title="Follow This Artist" class="btn">Follow</button></div>
         </header>
-        <section class="content">
-            <h5 class="tag genre">Contemporary</h5>
-            <h2 class="title">{{product.art.name}}</h2>
-            <!-- <p>Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.</p> -->
-        </section>
-        <footer class="foot">
-            <span>{{product.art.dimensions}}</span>
-            <h3>{{product.art.price | currency}}</h3>
-        </footer>
         <footer class="action-foot">
             <button @click="addToCart" class="purchase btn-primary">Buy Now</button>
-            <button @click="collectionToggle" v-if="!isInCollection" class="btn-secondary">Add To Collection</button>
+            <button @click="collectionToggle" v-if="!isInCollection" class="btn-secondary">Add To Favorites</button>
             <button @click="collectionToggle" v-if="isInCollection" class="btn-secondary">Remove From Collection</button>
-            <button v-if="!isProductPage" @click="viewProduct" class="btn-secondary">View More</button>
+            <button v-if="!isProductPage" @click="viewProduct" class="btn-secondary">Show Me More Art Like This</button>
         </footer>
     </aside>  
 </template>
@@ -78,6 +78,9 @@ export default {
   flex: 336px 1 0;
   box-shadow: inset 1px 0 0 0 #e8eced;
   padding: 50px 24px 24px 25px;
+  @media(max-width: 1000px ) {
+      max-width: 100%;
+  }
 }
 
 .head {

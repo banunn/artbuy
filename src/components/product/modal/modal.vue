@@ -88,8 +88,9 @@ export default {
         z-index: 800;
         display: flex;
         @media(max-width: 1000px) {
-            flex-direction: column;
             width: calc(100vw - 24px);
+            display: inherit;
+            overflow-y: auto;
         }
     }
 
