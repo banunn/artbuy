@@ -102,6 +102,9 @@ export default {
 .payment-head {
   padding: 50px 88px 0 88px;
   text-align: center;
+  @media(max-width: 1000px) {
+      padding: 16px 24px 0 24px;
+  }
   h1 {
     margin: 0;
     font-size: 34px;
@@ -164,5 +167,8 @@ select {
 
 .payment-form {
     padding: 80px 72px 0 72px;
+    @media(max-width: 1000px) {
+        padding: 12px 24px 0 24px;
+    }
 }
 </style>

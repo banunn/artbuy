@@ -9,10 +9,18 @@
     width: 864px;
     z-index: 800;
     box-shadow: 0 12px 24px 0 rgba(0,0,0,0.5);
+    @media(max-width: 1000px) {
+        max-width: calc(100% - 20px);
+        left: calc(50% - 5px);
+    }
     .close {
         position: absolute;
         top: -24px;
         left: -24px;
+        @media(max-width: 1000px) {
+            left: 0;
+            top: -32px;
+        }
         i {
             color: #fff;
         }

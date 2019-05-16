@@ -120,6 +120,9 @@ export default {
     letter-spacing: 0.9px;
     line-height: 12px;
     text-align: center;
+    @media(max-width: 1000px) {
+      width: 75px;
+    }
     &.btn-outline {
       border-color: #fff;
       color: #fff;

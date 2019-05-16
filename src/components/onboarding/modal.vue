@@ -53,6 +53,12 @@ export default {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        @media(max-width: 1000px) {
+            max-width: 100%;
+            height: inherit;
+            min-height: 480px;
+            padding: 24px;
+        }
         h1 {
             margin:0;
             font-size: 34px;	

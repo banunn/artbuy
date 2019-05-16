@@ -69,4 +69,10 @@ export default {
 
 .form-content-foot {}
 
+@media(max-width: 1000px) {
+    .media {
+        display: none;
+    }
+}
+
 </style>

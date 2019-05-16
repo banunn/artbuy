@@ -107,6 +107,9 @@ export default {
   padding: 24px 72px 24px 72px;
   margin-top: 64px;
   border-top: 1px solid #e8eaeb;
+  @media(max-width: 1000px) {
+    padding: 12px 36px 12px 0px !important;
+  }
   > div {
     display: flex;
     align-items: center;
@@ -144,6 +147,10 @@ export default {
 .list {
   display: flex;
   padding: 64px 72px 0;
+  @media(max-width: 1000px) {
+    flex-direction: column;
+    padding: 24px 36px 0;
+  }
   header {
     color: #ffffff;
     font-size: 16px;
@@ -162,6 +169,11 @@ export default {
     background-color: #ffffff;
     overflow: hidden;
     cursor: pointer;
+    @media(max-width: 1000px) {
+      margin-right: 0;
+      margin-bottom: 16px;
+      width: 100%;
+    }
     &:last-child {
       margin-right: 0;
     }

@@ -98,6 +98,11 @@ export default {
 
     .image-meta {
         padding: 0 48px 24px 48px;
+        @media(max-width: 1000px) {
+            padding: 0 0px 12px 0px;
+            max-width: 100%;
+            overflow-x: auto;
+        }
         display: flex;
         justify-content: space-between;
         background-color: #F5F7F7;
@@ -163,6 +168,13 @@ export default {
         position: absolute;
         bottom: 36px;
         right: 64px;
+        @media(max-width: 1000px) {
+            bottom: 12px;
+            left: 12px;
+            button {
+                margin-bottom: 12px;
+            }
+        }
     }
 
     .btn-light {

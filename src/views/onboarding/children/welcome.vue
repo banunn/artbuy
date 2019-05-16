@@ -115,6 +115,11 @@ export default {
         margin: 0 auto;
         text-align: center;
         padding: 50px 72px;
+        @media(max-width: 1000px) {
+            max-width: 100%;
+            height: inherit;
+            padding: 12px 24px;
+        }
         .head {
             margin-bottom: 80px;
             h1 {
@@ -140,6 +145,16 @@ export default {
         }
 
         .form-row {
+            @media(max-width: 1000px) {
+                flex-direction: column;
+                align-items: center;
+                button {
+                    width: 100%;
+                    min-height: 48px;
+                    margin-right: 0 !important;
+                    margin-bottom: 12px;
+                }
+            }
             button {
                 display: inline-flex;
                 justify-content: center;

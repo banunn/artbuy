@@ -66,4 +66,9 @@ export default {
         }
     }
 }
+.media {
+    @media(max-width: 1000px) {
+        display: none;
+    }
+}
 </style>
